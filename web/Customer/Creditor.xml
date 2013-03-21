@@ -1,0 +1,46 @@
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="course">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Status" type="xs:string" minOccurs="0" />
+                <xs:element name="OriginalBalance" type="xs:string" minOccurs="0" />
+                <xs:element name="NewCredit" type="xs:string" minOccurs="0" />
+                <xs:element name="BalanceatSettlment" type="xs:string" minOccurs="0" />
+                <xs:element name="SettlmentAmount" type="xs:string" minOccurs="0" />
+                <xs:element name="FeesAmount" type="xs:string" minOccurs="0" />
+
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <course>
+    <Name>Allied Cash Advance</Name>
+    <Status>Settled</Status>
+    <OriginalBalance>$500</OriginalBalance>
+    <NewCredit>NCA</NewCredit>
+    <BalanceatSettlment>$700</BalanceatSettlment>
+    <SettlmentAmount>$400</SettlmentAmount>
+    <FeesAmount>$160</FeesAmount>
+  </course>
+
+  <course>
+    <Name>Advance America</Name>
+    <Status> Payment Plan</Status>
+    <OriginalBalance>$1000</OriginalBalance>
+    <NewCredit></NewCredit>
+    <BalanceatSettlment>$1500</BalanceatSettlment>
+    <SettlmentAmount>$750</SettlmentAmount>
+    <FeesAmount>$300</FeesAmount>
+  </course>
+
+  
+  
+</NewDataSet>

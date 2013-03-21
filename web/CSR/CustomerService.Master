@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomerService.master.cs"
+    Inherits="IDPRO.web.CSR.CustomerService" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../../StyleSheet.css" rel="stylesheet" type="text/css" />
+    <%--<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />--%>
+    <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/bootstrap-formhelpers.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="scriptmanager" runat="server">
+    </asp:ScriptManager>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                <div id="in-sub-nav">
+                    <ul class="nav nav-tabs" id="mymain">
+                        <li class="active"><a href="CustomerService.aspx" id="cs" runat="server"><i
+                            class="icon-user-md"></i>
+                            <br>
+                            Customer Service</a></li>
+                        <li class=""><a id="A1" href="./Mails.aspx" runat="server"><i class="icon-envelope">
+                        </i>
+                            <br>
+                            Email</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         <div class="row-fluid">
+        <div class="span12">
+            <div class="box">
+                <div class="box-header">
+                    <span class="title">Customer Service</span>
+                </div>
+                <div class="box-content">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="tabbable margin-small">
+                                <ul class="nav nav-tabs">
+                                   <li class="active"><a href="CustomerService.aspx">Home</a></li>
+                                   <%-- <li class=""><a href="../Customer/PersonalInfo.aspx">Personal Info</a></li>
+                                    <li class=""><a href="../Customer/BankInfo.aspx">Bank Info</a></li>
+                                    <li class=""><a href="../Customer/Creditor.aspx">Creditor Info</a></li>
+                                    <li class=""><a href="../Customer/PlanInfo.aspx">Plan Info</a></li>
+                                    <li class=""><a href="../Customer/Drafts.aspx">Drafts</a></li>
+                                    <li class=""><a href="../Customer/DateJournals.aspx">Date Journal</a></li>
+                                    <li class=""><a href="../Customer/IDProtection.aspx">ID Protection</a></li>
+                                    <li class=""><a href="../Customer/TicketHistory.aspx">Ticket History</a></li>--%>
+                                </ul>
+                            </div>
+                        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+           </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <%--<div id="footer" class="clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="span12 bg pull-right">
+                    <p>
+                        Copyright My Company Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>--%>
+    <script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-selectbox.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-states.en_US.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-states.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-datepicker.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-datepicker.en_US.js" type="text/javascript"></script>
+    <script src="js/twitter-bootstrap-hover-dropdown.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url = window.location.pathname;
+            var substr = url.split('/');
+            var urlaspx = substr[substr.length - 1];
+            $('#mymain').find('.active').removeClass('active');
+            $('#mymain li a').each(function () {
+                if (this.href.indexOf(urlaspx) >= 0) {
+                    $(this).parent().addClass('active');
+                }
+            });
+        });
+    </script>
+    </form>
+</body>
+</html>

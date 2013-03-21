@@ -1,0 +1,88 @@
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="course">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="EffectiveDate" type="xs:string" minOccurs="0" />
+                <xs:element name="Amount" type="xs:string" minOccurs="0" />
+                <xs:element name="Status" type="xs:string" minOccurs="0" />
+                <xs:element name="UpdatedBy" type="xs:string" minOccurs="0" />
+                <xs:element name="UpdatedDate" type="xs:string" minOccurs="0" />
+                <xs:element name="Memo" type="xs:string" minOccurs="0" />
+
+
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <course>
+    <EffectiveDate>01/14/2013</EffectiveDate>
+    <Amount>$ 199.00</Amount>
+    <Status>Cleared</Status>
+    <UpdatedBy>System</UpdatedBy>
+    <UpdatedDate>03/16/2013</UpdatedDate>
+    <Memo></Memo>
+  </course>
+
+  <course>
+    <EffectiveDate>02/14/2013</EffectiveDate>
+    <Amount>$ 199.00</Amount>
+    <Status>Pushed</Status>
+    <UpdatedBy>SOBRIEN</UpdatedBy>
+    <UpdatedDate>02/10/2013</UpdatedDate>
+    <Memo></Memo>
+  </course>
+
+  <course>
+    <EffectiveDate>03/14/2013</EffectiveDate>
+    <Amount>$ 199.00</Amount>
+    <Status>NSF</Status>
+    <UpdatedBy>System</UpdatedBy>
+    <UpdatedDate>03/16/2013</UpdatedDate>
+    <Memo></Memo>
+  </course>
+  <course>
+  <EffectiveDate>04/14/2013</EffectiveDate>
+  <Amount>$ 199.00</Amount>
+  <Status>Scheduled</Status>
+  <UpdatedBy></UpdatedBy>
+  <UpdatedDate></UpdatedDate>
+  <Memo></Memo>
+  </course>
+
+  <course>
+    <EffectiveDate>05/14/2013</EffectiveDate>
+    <Amount>$ 199.00</Amount>
+    <Status>Scheduled</Status>
+    <UpdatedBy></UpdatedBy>
+    <UpdatedDate></UpdatedDate>
+    <Memo></Memo>
+  </course>
+
+  <course>
+    <EffectiveDate>06/14/2013</EffectiveDate>
+    <Amount>$ 199.00</Amount>
+    <Status>Scheduled</Status>
+    <UpdatedBy></UpdatedBy>
+    <UpdatedDate></UpdatedDate>
+    <Memo></Memo>
+  </course>
+
+
+  <course>
+    <EffectiveDate>07/14/2013</EffectiveDate>
+    <Amount>$ 199.00</Amount>
+    <Status>Scheduled</Status>
+    <UpdatedBy></UpdatedBy>
+    <UpdatedDate></UpdatedDate>
+    <Memo></Memo>
+  </course>
+  
+  
+</NewDataSet>

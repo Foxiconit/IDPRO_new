@@ -1,0 +1,31 @@
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="course">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Clientid" type="xs:string" minOccurs="0" />
+              
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="SSN" type="xs:string" minOccurs="0" />
+                <xs:element name="Status" type="xs:string" minOccurs="0" />
+                
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <course>
+    <Clientid>0017</Clientid>
+    <Name>John Smith</Name>
+    <SSN>252 220 0000</SSN>
+    <Status>Active</Status>
+    
+  </course>
+  
+
+</NewDataSet>

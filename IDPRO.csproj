@@ -1,0 +1,1389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4B496AA-4AD4-45F3-91A9-2A96E3B5FCDB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IDPRO</RootNamespace>
+    <AssemblyName>IDPRO</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ticket.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="web\CSR\AccountUpdate.aspx" />
+    <Content Include="web\CSR\CheckIn-Call.aspx" />
+    <Content Include="web\CSR\CustomerService.aspx" />
+    <Content Include="web\CSR\EscalationCancel-111.aspx" />
+    <Content Include="web\CSR\EscalationCancel-112.aspx" />
+    <Content Include="web\CSR\EscalationCancel-Step1.aspx" />
+    <Content Include="web\CSR\EscalationCancel-Step11-1.aspx" />
+    <Content Include="web\CSR\EscalationCancel-Step11-2.aspx" />
+    <Content Include="web\CSR\EscalationCancel-Step11.aspx" />
+    <Content Include="web\CSR\EscalationCancel-Step12.aspx" />
+    <Content Include="web\CSR\EscalationCancel-Step13.aspx" />
+    <Content Include="web\CSR\EscalationCancel-Step14.aspx" />
+    <Content Include="web\CSR\EscalationRefundNSF.aspx" />
+    <Content Include="web\CSR\EscalationUpsetCust-Step1.aspx" />
+    <Content Include="web\CSR\EscalationUpsetCust-Step11.aspx" />
+    <Content Include="web\CSR\EscalationUpsetCust-Step12.aspx" />
+    <Content Include="web\CSR\FSKIDTrack-3.aspx" />
+    <Content Include="web\CSR\FSKIDTrack.aspx" />
+    <Content Include="web\CSR\Graduation-Step2.aspx" />
+    <Content Include="web\CSR\Graduation.aspx" />
+    <Content Include="web\CSR\Lender-Validate.aspx" />
+    <Content Include="web\CSR\Lenders-DebitingStep1.aspx" />
+    <Content Include="web\CSR\Lenders-DebitingStep11.aspx" />
+    <Content Include="web\CSR\Lenders-DebitingStep12.aspx" />
+    <Content Include="web\CSR\Lenders-DebitingStep121.aspx" />
+    <Content Include="web\CSR\Lenders-HarassingCust-Step1.aspx" />
+    <Content Include="web\CSR\Lenders-HarassingCust-Step12.aspx" />
+    <Content Include="web\CSR\Lenders-HarassingRef-Step1.aspx" />
+    <Content Include="web\CSR\Lenders-HarassingRef-Step12.aspx" />
+    <Content Include="web\CSR\Lenders-NCA-1.aspx" />
+    <Content Include="web\CSR\Lenders-NCA.aspx" />
+    <Content Include="web\CSR\Lenders-Settlement.aspx" />
+    <Content Include="web\CSR\Lenders-Threatening-Step1.aspx" />
+    <Content Include="web\CSR\Lenders-Threatening-Step12.aspx" />
+    <Content Include="web\CSR\Lenders-ValidationD-Step1.aspx" />
+    <Content Include="web\CSR\Lenders-ValidationD-Step11.aspx" />
+    <Content Include="web\CSR\PaymentModify-step1.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11-1.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11-11-1.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11-11-2.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11-11.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11-2.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11-21.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11-3.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11-4.aspx" />
+    <Content Include="web\CSR\PaymentModify-step11.aspx" />
+    <Content Include="web\CSR\PaymentReschedule-Step1-1.aspx" />
+    <Content Include="web\CSR\PaymentReschedule-Step1-12-1.aspx" />
+    <Content Include="web\CSR\PaymentReschedule-Step1-12.aspx" />
+    <Content Include="web\CSR\PaymentReschedule-step1.aspx" />
+    <Content Include="web\CSR\ProofResidency-Step1.aspx" />
+    <Content Include="web\CSR\WebForm1.aspx" />
+    <Content Include="web\Customer\BankInfo.aspx" />
+    <Content Include="Drafts.xml" />
+    <Content Include="web\Customer\Creditor.aspx" />
+    <Content Include="web\Customer\Creditor.xml" />
+    <Content Include="CustomerService.xml" />
+    <Content Include="Lenders.xml" />
+    <Content Include="obj\Debug\IDPRO.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\IDPRO.dll" />
+    <Content Include="obj\Debug\IDPRO.pdb" />
+    <Content Include="web\CSR\AccountInformationChange.aspx" />
+    <Content Include="AddEmployee.aspx" />
+    <Content Include="BankInfo.aspx" />
+    <Content Include="web\CSR\BankingInformationChange.aspx" />
+    <Content Include="web\CSR\BankingInformationChange2.aspx" />
+    <Content Include="web\CSR\BankingInformationChangeConfirm.aspx" />
+    <Content Include="web\CSR\ChangeLender-Change-step2-1.aspx" />
+    <Content Include="web\CSR\ChangeLender-Remove-Step1-2-1.aspx" />
+    <Content Include="web\CSR\ChangeLender-Remove-Step1-2-2.aspx" />
+    <Content Include="web\CSR\ChangeLender-Remove-Step1-2-3.aspx" />
+    <Content Include="web\CSR\ChangeLender-Step1-2.aspx" />
+    <Content Include="web\CSR\ChangeLender-Step1.aspx" />
+    <Content Include="web\CSR\ChangeLenderConfirmation.aspx" />
+    <Content Include="ClientDistributions.aspx" />
+    <Content Include="web\CSR\ContactInformationChange.aspx" />
+    <Content Include="web\CSR\ContactInformationChangeConfirm.aspx" />
+    <Content Include="web\CSR\Courtesy-Call-step1.aspx" />
+    <Content Include="web\CSR\Courtesy-Call-step11.aspx" />
+    <Content Include="web\CSR\CustomerService.xml" />
+    <Content Include="web\CSR\FSKIDcancel-step1-2.aspx" />
+    <Content Include="web\CSR\FSKIDcancel-step1-3-1.aspx" />
+    <Content Include="web\CSR\FSKIDcancel-step1-3-11.aspx" />
+    <Content Include="web\CSR\FSKIDcancel-step1-3-2.aspx" />
+    <Content Include="web\CSR\FSKIDcancel-step1-3-21.aspx" />
+    <Content Include="web\CSR\FSKIDcancel-step1-3-22.aspx" />
+    <Content Include="web\CSR\FSKIDcancel-step1-3.aspx" />
+    <Content Include="web\CSR\FSKIDcancel-step1.aspx" />
+    <Content Include="web\CSR\Lenders-Out.aspx" />
+    <Content Include="web\CSR\Lenders-TicketAdded.aspx" />
+    <Content Include="web\CSR\Lenders.xml" />
+    <Content Include="Create-client.aspx" />
+    <Content Include="CreateTicket.aspx" />
+    <Content Include="Creditor.aspx" />
+    <Content Include="Creditor.xml" />
+    <Content Include="css\bootstrap-formhelpers.css" />
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap-responsive.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="Customers.xml" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="EmployeeLogin.aspx" />
+    <Content Include="font\fontawesome-webfont.svg" />
+    <Content Include="img\batch-32.png" />
+    <Content Include="img\bg_divider.png" />
+    <Content Include="img\f.svg" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\header-bg.png" />
+    <Content Include="img\l.svg" />
+    <Content Include="img\shape.png" />
+    <Content Include="img\t.svg" />
+    <Content Include="img\white-batch-32.png" />
+    <Content Include="js\bootstrap-formhelpers-datepicker.en_US.js" />
+    <Content Include="js\bootstrap-formhelpers-datepicker.js" />
+    <Content Include="js\bootstrap-formhelpers-selectbox.js" />
+    <Content Include="js\bootstrap-formhelpers-states.en_US.js" />
+    <Content Include="js\bootstrap-formhelpers-states.js" />
+    <Content Include="js\bootstrap-tab.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-1.9.0.min.js" />
+    <Content Include="js\twitter-bootstrap-hover-dropdown.js" />
+    <Content Include="LeadActivity.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep1.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep2-1.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep2-2-1-2.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep2-2-2-1-1-1.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep2-2-2-1-1.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep2-2-2-1.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep2-2-2.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep2-2.aspx" />
+    <Content Include="web\CSR\Lenders-AddLenderStep2-2-1.aspx" />
+    <Content Include="Mails.aspx" />
+    <Content Include="ManageEmployee.aspx" />
+    <Content Include="Negotiation.aspx" />
+    <Content Include="OnBoarding.aspx" />
+    <Content Include="Orientation.aspx" />
+    <Content Include="orientation.xml" />
+    <Content Include="web\CSR\PaymentModify-all-step1-1.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-11.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-2.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-21.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-22-1.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-22-2.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-22-3.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-22-4.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-22.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1-23.aspx" />
+    <Content Include="web\CSR\PaymentModify-all-step1.aspx" />
+    <Content Include="web\CSR\PaymentsWithdrawal-step1.aspx" />
+    <Content Include="web\CSR\PaymentWithdrawal-step1-1.aspx" />
+    <Content Include="web\CSR\PaymentWithdrawal-step1-11.aspx" />
+    <Content Include="web\CSR\PaymentWithdrawal-step1-12-1.aspx" />
+    <Content Include="web\CSR\PaymentWithdrawal-step1-12.aspx" />
+    <Content Include="web\CSR\PaymentWithdrawal-step1-2.aspx" />
+    <Content Include="Plan.aspx" />
+    <Content Include="RDAANotRequired.aspx" />
+    <Content Include="Reports.aspx" />
+    <Content Include="web\CSR\RDAA-Step1-1.aspx" />
+    <Content Include="web\CSR\RDAA-Step1-11-1.aspx" />
+    <Content Include="web\CSR\RDAA-Step1-11-2.aspx" />
+    <Content Include="web\CSR\RDAA-Step1-11.aspx" />
+    <Content Include="web\CSR\RDAA-Step1-12.aspx" />
+    <Content Include="web\CSR\RDAA-Step1-2.aspx" />
+    <Content Include="web\CSR\RDAA-Step1.aspx" />
+    <Content Include="web\CSR\SelectIssueType.aspx" />
+    <Content Include="StyleSheet.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Search-client.aspx" />
+    <Content Include="web\Customer\DateJournals.aspx" />
+    <Content Include="web\Customer\Drafts.aspx" />
+    <Content Include="web\Customer\IDProtection.aspx" />
+    <Content Include="web\Customer\PersonalInfo.aspx" />
+    <Content Include="web\Customer\PlanInfo.aspx" />
+    <Content Include="web\Customer\Customers.aspx" />
+    <Content Include="web\Customer\TicketHistory.aspx" />
+    <Content Include="web\Sales\js\bootstrap-formhelpers-datepicker.en_US.js" />
+    <Content Include="web\Sales\js\bootstrap-formhelpers-datepicker.js" />
+    <Content Include="web\Sales\js\bootstrap-formhelpers-selectbox.js" />
+    <Content Include="web\Sales\js\bootstrap-formhelpers-states.en_US.js" />
+    <Content Include="web\Sales\js\bootstrap-formhelpers-states.js" />
+    <Content Include="web\Sales\js\bootstrap-tab.js" />
+    <Content Include="web\Sales\js\bootstrap.js" />
+    <Content Include="web\Sales\js\bootstrap.min.js" />
+    <Content Include="web\Sales\js\jquery-1.9.0.min.js" />
+    <Content Include="web\Sales\js\twitter-bootstrap-hover-dropdown.js" />
+    <Content Include="web\Sales\PersonalInfo.aspx" />
+    <Content Include="web\Sales\SearchCustomer.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="csharp\Constants\DebtConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Constants\EmployeeDepartmentConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Constants\EmployeeStatusConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Constants\IdProConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\DAO\AccountDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\DAO\ConnectionDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\DAO\CustomerDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\DAO\Customer_Account_O2MDAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\DAO\EmployeeDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\DAO\MenuDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\DAO\TicketDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\DAO\UserDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Model\Account.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Model\customer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Model\Customer_Account_O2M.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Model\Employee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Model\Ticket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Model\TicketAssignment.cs" />
+    <Compile Include="csharp\Model\TicketNode.cs" />
+    <Compile Include="csharp\Model\User.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Services\AccountServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Services\CustomerServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Services\Customer_Account_O2MService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Services\EmployeeService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Services\TicketService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csharp\Services\UserServices.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="web\CSR\AccountUpdate.aspx.cs">
+      <DependentUpon>AccountUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\AccountUpdate.aspx.designer.cs">
+      <DependentUpon>AccountUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\CheckIn-Call.aspx.cs">
+      <DependentUpon>CheckIn-Call.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\CheckIn-Call.aspx.designer.cs">
+      <DependentUpon>CheckIn-Call.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\CustomerService.aspx.cs">
+      <DependentUpon>CustomerService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\CustomerService.aspx.designer.cs">
+      <DependentUpon>CustomerService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\CustomerService.Master.cs">
+      <DependentUpon>CustomerService.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\CustomerService.Master.designer.cs">
+      <DependentUpon>CustomerService.Master</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-111.aspx.cs">
+      <DependentUpon>EscalationCancel-111.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-111.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-111.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-112.aspx.cs">
+      <DependentUpon>EscalationCancel-112.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-112.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-112.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step1.aspx.cs">
+      <DependentUpon>EscalationCancel-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step1.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step11-1.aspx.cs">
+      <DependentUpon>EscalationCancel-Step11-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step11-1.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-Step11-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step11-2.aspx.cs">
+      <DependentUpon>EscalationCancel-Step11-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step11-2.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-Step11-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step11.aspx.cs">
+      <DependentUpon>EscalationCancel-Step11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step11.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-Step11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step12.aspx.cs">
+      <DependentUpon>EscalationCancel-Step12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step12.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-Step12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step13.aspx.cs">
+      <DependentUpon>EscalationCancel-Step13.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step13.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-Step13.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step14.aspx.cs">
+      <DependentUpon>EscalationCancel-Step14.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationCancel-Step14.aspx.designer.cs">
+      <DependentUpon>EscalationCancel-Step14.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationRefundNSF.aspx.cs">
+      <DependentUpon>EscalationRefundNSF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationRefundNSF.aspx.designer.cs">
+      <DependentUpon>EscalationRefundNSF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationUpsetCust-Step1.aspx.cs">
+      <DependentUpon>EscalationUpsetCust-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationUpsetCust-Step1.aspx.designer.cs">
+      <DependentUpon>EscalationUpsetCust-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationUpsetCust-Step11.aspx.cs">
+      <DependentUpon>EscalationUpsetCust-Step11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationUpsetCust-Step11.aspx.designer.cs">
+      <DependentUpon>EscalationUpsetCust-Step11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\EscalationUpsetCust-Step12.aspx.cs">
+      <DependentUpon>EscalationUpsetCust-Step12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\EscalationUpsetCust-Step12.aspx.designer.cs">
+      <DependentUpon>EscalationUpsetCust-Step12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDTrack-3.aspx.cs">
+      <DependentUpon>FSKIDTrack-3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDTrack-3.aspx.designer.cs">
+      <DependentUpon>FSKIDTrack-3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDTrack.aspx.cs">
+      <DependentUpon>FSKIDTrack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDTrack.aspx.designer.cs">
+      <DependentUpon>FSKIDTrack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Graduation-Step2.aspx.cs">
+      <DependentUpon>Graduation-Step2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Graduation-Step2.aspx.designer.cs">
+      <DependentUpon>Graduation-Step2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Graduation.aspx.cs">
+      <DependentUpon>Graduation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Graduation.aspx.designer.cs">
+      <DependentUpon>Graduation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lender-Validate.aspx.cs">
+      <DependentUpon>Lender-Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lender-Validate.aspx.designer.cs">
+      <DependentUpon>Lender-Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-DebitingStep1.aspx.cs">
+      <DependentUpon>Lenders-DebitingStep1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-DebitingStep1.aspx.designer.cs">
+      <DependentUpon>Lenders-DebitingStep1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-DebitingStep11.aspx.cs">
+      <DependentUpon>Lenders-DebitingStep11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-DebitingStep11.aspx.designer.cs">
+      <DependentUpon>Lenders-DebitingStep11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-DebitingStep12.aspx.cs">
+      <DependentUpon>Lenders-DebitingStep12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-DebitingStep12.aspx.designer.cs">
+      <DependentUpon>Lenders-DebitingStep12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-DebitingStep121.aspx.cs">
+      <DependentUpon>Lenders-DebitingStep121.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-DebitingStep121.aspx.designer.cs">
+      <DependentUpon>Lenders-DebitingStep121.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-HarassingCust-Step1.aspx.cs">
+      <DependentUpon>Lenders-HarassingCust-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-HarassingCust-Step1.aspx.designer.cs">
+      <DependentUpon>Lenders-HarassingCust-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-HarassingCust-Step12.aspx.cs">
+      <DependentUpon>Lenders-HarassingCust-Step12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-HarassingCust-Step12.aspx.designer.cs">
+      <DependentUpon>Lenders-HarassingCust-Step12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-HarassingRef-Step1.aspx.cs">
+      <DependentUpon>Lenders-HarassingRef-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-HarassingRef-Step1.aspx.designer.cs">
+      <DependentUpon>Lenders-HarassingRef-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-HarassingRef-Step12.aspx.cs">
+      <DependentUpon>Lenders-HarassingRef-Step12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-HarassingRef-Step12.aspx.designer.cs">
+      <DependentUpon>Lenders-HarassingRef-Step12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-NCA-1.aspx.cs">
+      <DependentUpon>Lenders-NCA-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-NCA-1.aspx.designer.cs">
+      <DependentUpon>Lenders-NCA-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-NCA.aspx.cs">
+      <DependentUpon>Lenders-NCA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-NCA.aspx.designer.cs">
+      <DependentUpon>Lenders-NCA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-Settlement.aspx.cs">
+      <DependentUpon>Lenders-Settlement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-Settlement.aspx.designer.cs">
+      <DependentUpon>Lenders-Settlement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-Threatening-Step1.aspx.cs">
+      <DependentUpon>Lenders-Threatening-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-Threatening-Step1.aspx.designer.cs">
+      <DependentUpon>Lenders-Threatening-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-Threatening-Step12.aspx.cs">
+      <DependentUpon>Lenders-Threatening-Step12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-Threatening-Step12.aspx.designer.cs">
+      <DependentUpon>Lenders-Threatening-Step12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-ValidationD-Step1.aspx.cs">
+      <DependentUpon>Lenders-ValidationD-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-ValidationD-Step1.aspx.designer.cs">
+      <DependentUpon>Lenders-ValidationD-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-ValidationD-Step11.aspx.cs">
+      <DependentUpon>Lenders-ValidationD-Step11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-ValidationD-Step11.aspx.designer.cs">
+      <DependentUpon>Lenders-ValidationD-Step11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step1.aspx.cs">
+      <DependentUpon>PaymentModify-step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step1.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-1.aspx.cs">
+      <DependentUpon>PaymentModify-step11-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-1.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-11-1.aspx.cs">
+      <DependentUpon>PaymentModify-step11-11-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-11-1.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11-11-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-11-2.aspx.cs">
+      <DependentUpon>PaymentModify-step11-11-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-11-2.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11-11-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-11.aspx.cs">
+      <DependentUpon>PaymentModify-step11-11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-11.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11-11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-2.aspx.cs">
+      <DependentUpon>PaymentModify-step11-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-2.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-21.aspx.cs">
+      <DependentUpon>PaymentModify-step11-21.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-21.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11-21.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-3.aspx.cs">
+      <DependentUpon>PaymentModify-step11-3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-3.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11-3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-4.aspx.cs">
+      <DependentUpon>PaymentModify-step11-4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11-4.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11-4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11.aspx.cs">
+      <DependentUpon>PaymentModify-step11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-step11.aspx.designer.cs">
+      <DependentUpon>PaymentModify-step11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentReschedule-Step1-1.aspx.cs">
+      <DependentUpon>PaymentReschedule-Step1-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentReschedule-Step1-1.aspx.designer.cs">
+      <DependentUpon>PaymentReschedule-Step1-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentReschedule-Step1-12-1.aspx.cs">
+      <DependentUpon>PaymentReschedule-Step1-12-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentReschedule-Step1-12-1.aspx.designer.cs">
+      <DependentUpon>PaymentReschedule-Step1-12-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentReschedule-Step1-12.aspx.cs">
+      <DependentUpon>PaymentReschedule-Step1-12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentReschedule-Step1-12.aspx.designer.cs">
+      <DependentUpon>PaymentReschedule-Step1-12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentReschedule-step1.aspx.cs">
+      <DependentUpon>PaymentReschedule-step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentReschedule-step1.aspx.designer.cs">
+      <DependentUpon>PaymentReschedule-step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ProofResidency-Step1.aspx.cs">
+      <DependentUpon>ProofResidency-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ProofResidency-Step1.aspx.designer.cs">
+      <DependentUpon>ProofResidency-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\BankInfo.aspx.cs">
+      <DependentUpon>BankInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\BankInfo.aspx.designer.cs">
+      <DependentUpon>BankInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\Creditor.aspx.cs">
+      <DependentUpon>Creditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\Creditor.aspx.designer.cs">
+      <DependentUpon>Creditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\AccountInformationChange.aspx.cs">
+      <DependentUpon>AccountInformationChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\AccountInformationChange.aspx.designer.cs">
+      <DependentUpon>AccountInformationChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployee.aspx.cs">
+      <DependentUpon>AddEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEmployee.aspx.designer.cs">
+      <DependentUpon>AddEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BankInfo.aspx.cs">
+      <DependentUpon>BankInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankInfo.aspx.designer.cs">
+      <DependentUpon>BankInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\BankingInformationChange.aspx.cs">
+      <DependentUpon>BankingInformationChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\BankingInformationChange.aspx.designer.cs">
+      <DependentUpon>BankingInformationChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\BankingInformationChange2.aspx.cs">
+      <DependentUpon>BankingInformationChange2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\BankingInformationChange2.aspx.designer.cs">
+      <DependentUpon>BankingInformationChange2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\BankingInformationChangeConfirm.aspx.cs">
+      <DependentUpon>BankingInformationChangeConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\BankingInformationChangeConfirm.aspx.designer.cs">
+      <DependentUpon>BankingInformationChangeConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Change-step2-1.aspx.cs">
+      <DependentUpon>ChangeLender-Change-step2-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Change-step2-1.aspx.designer.cs">
+      <DependentUpon>ChangeLender-Change-step2-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Remove-Step1-2-1.aspx.cs">
+      <DependentUpon>ChangeLender-Remove-Step1-2-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Remove-Step1-2-1.aspx.designer.cs">
+      <DependentUpon>ChangeLender-Remove-Step1-2-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Remove-Step1-2-2.aspx.cs">
+      <DependentUpon>ChangeLender-Remove-Step1-2-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Remove-Step1-2-2.aspx.designer.cs">
+      <DependentUpon>ChangeLender-Remove-Step1-2-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Remove-Step1-2-3.aspx.cs">
+      <DependentUpon>ChangeLender-Remove-Step1-2-3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Remove-Step1-2-3.aspx.designer.cs">
+      <DependentUpon>ChangeLender-Remove-Step1-2-3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Step1-2.aspx.cs">
+      <DependentUpon>ChangeLender-Step1-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Step1-2.aspx.designer.cs">
+      <DependentUpon>ChangeLender-Step1-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Step1.aspx.cs">
+      <DependentUpon>ChangeLender-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLender-Step1.aspx.designer.cs">
+      <DependentUpon>ChangeLender-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLenderConfirmation.aspx.cs">
+      <DependentUpon>ChangeLenderConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ChangeLenderConfirmation.aspx.designer.cs">
+      <DependentUpon>ChangeLenderConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientDistributions.aspx.cs">
+      <DependentUpon>ClientDistributions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientDistributions.aspx.designer.cs">
+      <DependentUpon>ClientDistributions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ContactInformationChange.aspx.cs">
+      <DependentUpon>ContactInformationChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ContactInformationChange.aspx.designer.cs">
+      <DependentUpon>ContactInformationChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\ContactInformationChangeConfirm.aspx.cs">
+      <DependentUpon>ContactInformationChangeConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\ContactInformationChangeConfirm.aspx.designer.cs">
+      <DependentUpon>ContactInformationChangeConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create-client.aspx.cs">
+      <DependentUpon>Create-client.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create-client.aspx.designer.cs">
+      <DependentUpon>Create-client.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateTicket.aspx.cs">
+      <DependentUpon>CreateTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateTicket.aspx.designer.cs">
+      <DependentUpon>CreateTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creditor.aspx.cs">
+      <DependentUpon>Creditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creditor.aspx.designer.cs">
+      <DependentUpon>Creditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Courtesy-Call-step1.aspx.cs">
+      <DependentUpon>Courtesy-Call-step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Courtesy-Call-step1.aspx.designer.cs">
+      <DependentUpon>Courtesy-Call-step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Courtesy-Call-step11.aspx.cs">
+      <DependentUpon>Courtesy-Call-step11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Courtesy-Call-step11.aspx.designer.cs">
+      <DependentUpon>Courtesy-Call-step11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLogin.aspx.cs">
+      <DependentUpon>EmployeeLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeLogin.aspx.designer.cs">
+      <DependentUpon>EmployeeLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-2.aspx.cs">
+      <DependentUpon>FSKIDcancel-step1-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-2.aspx.designer.cs">
+      <DependentUpon>FSKIDcancel-step1-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-1.aspx.cs">
+      <DependentUpon>FSKIDcancel-step1-3-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-1.aspx.designer.cs">
+      <DependentUpon>FSKIDcancel-step1-3-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-11.aspx.cs">
+      <DependentUpon>FSKIDcancel-step1-3-11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-11.aspx.designer.cs">
+      <DependentUpon>FSKIDcancel-step1-3-11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-2.aspx.cs">
+      <DependentUpon>FSKIDcancel-step1-3-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-2.aspx.designer.cs">
+      <DependentUpon>FSKIDcancel-step1-3-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-21.aspx.cs">
+      <DependentUpon>FSKIDcancel-step1-3-21.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-21.aspx.designer.cs">
+      <DependentUpon>FSKIDcancel-step1-3-21.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-22.aspx.cs">
+      <DependentUpon>FSKIDcancel-step1-3-22.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3-22.aspx.designer.cs">
+      <DependentUpon>FSKIDcancel-step1-3-22.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3.aspx.cs">
+      <DependentUpon>FSKIDcancel-step1-3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1-3.aspx.designer.cs">
+      <DependentUpon>FSKIDcancel-step1-3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1.aspx.cs">
+      <DependentUpon>FSKIDcancel-step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\FSKIDcancel-step1.aspx.designer.cs">
+      <DependentUpon>FSKIDcancel-step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LeadActivity.aspx.cs">
+      <DependentUpon>LeadActivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeadActivity.aspx.designer.cs">
+      <DependentUpon>LeadActivity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep1.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep1.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-1.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep2-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-1.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep2-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-1-2.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-1-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-1-2.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-1-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-2-1-1-1.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-2-1-1-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-2-1-1-1.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-2-1-1-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-2-1-1.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-2-1-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-2-1-1.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-2-1-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-2-1.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-2-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-2-1.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-2-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-2.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-2.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-1.aspx.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-AddLenderStep2-2-1.aspx.designer.cs">
+      <DependentUpon>Lenders-AddLenderStep2-2-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-Out.aspx.cs">
+      <DependentUpon>Lenders-Out.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-Out.aspx.designer.cs">
+      <DependentUpon>Lenders-Out.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-TicketAdded.aspx.cs">
+      <DependentUpon>Lenders-TicketAdded.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\Lenders-TicketAdded.aspx.designer.cs">
+      <DependentUpon>Lenders-TicketAdded.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mails.aspx.cs">
+      <DependentUpon>Mails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mails.aspx.designer.cs">
+      <DependentUpon>Mails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ManageEmployee.aspx.cs">
+      <DependentUpon>ManageEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageEmployee.aspx.designer.cs">
+      <DependentUpon>ManageEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Negotiation.aspx.cs">
+      <DependentUpon>Negotiation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Negotiation.aspx.designer.cs">
+      <DependentUpon>Negotiation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnBoarding.aspx.cs">
+      <DependentUpon>OnBoarding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnBoarding.aspx.designer.cs">
+      <DependentUpon>OnBoarding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orientation.aspx.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orientation.aspx.designer.cs">
+      <DependentUpon>Orientation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-1.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-1.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-11.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-11.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-2.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-2.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-21.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-21.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-21.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-21.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22-1.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-22-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22-1.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-22-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22-2.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-22-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22-2.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-22-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22-3.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-22-3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22-3.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-22-3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22-4.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-22-4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22-4.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-22-4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-22.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-22.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-22.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-23.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1-23.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1-23.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1-23.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1.aspx.cs">
+      <DependentUpon>PaymentModify-all-step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentModify-all-step1.aspx.designer.cs">
+      <DependentUpon>PaymentModify-all-step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentsWithdrawal-step1.aspx.cs">
+      <DependentUpon>PaymentsWithdrawal-step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentsWithdrawal-step1.aspx.designer.cs">
+      <DependentUpon>PaymentsWithdrawal-step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-1.aspx.cs">
+      <DependentUpon>PaymentWithdrawal-step1-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-1.aspx.designer.cs">
+      <DependentUpon>PaymentWithdrawal-step1-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-11.aspx.cs">
+      <DependentUpon>PaymentWithdrawal-step1-11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-11.aspx.designer.cs">
+      <DependentUpon>PaymentWithdrawal-step1-11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-12-1.aspx.cs">
+      <DependentUpon>PaymentWithdrawal-step1-12-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-12-1.aspx.designer.cs">
+      <DependentUpon>PaymentWithdrawal-step1-12-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-12.aspx.cs">
+      <DependentUpon>PaymentWithdrawal-step1-12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-12.aspx.designer.cs">
+      <DependentUpon>PaymentWithdrawal-step1-12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-2.aspx.cs">
+      <DependentUpon>PaymentWithdrawal-step1-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\PaymentWithdrawal-step1-2.aspx.designer.cs">
+      <DependentUpon>PaymentWithdrawal-step1-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Plan.aspx.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plan.aspx.designer.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RDAANotRequired.aspx.cs">
+      <DependentUpon>RDAANotRequired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RDAANotRequired.aspx.designer.cs">
+      <DependentUpon>RDAANotRequired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-1.aspx.cs">
+      <DependentUpon>RDAA-Step1-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-1.aspx.designer.cs">
+      <DependentUpon>RDAA-Step1-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-11-1.aspx.cs">
+      <DependentUpon>RDAA-Step1-11-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-11-1.aspx.designer.cs">
+      <DependentUpon>RDAA-Step1-11-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-11-2.aspx.cs">
+      <DependentUpon>RDAA-Step1-11-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-11-2.aspx.designer.cs">
+      <DependentUpon>RDAA-Step1-11-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-11.aspx.cs">
+      <DependentUpon>RDAA-Step1-11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-11.aspx.designer.cs">
+      <DependentUpon>RDAA-Step1-11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-12.aspx.cs">
+      <DependentUpon>RDAA-Step1-12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-12.aspx.designer.cs">
+      <DependentUpon>RDAA-Step1-12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-2.aspx.cs">
+      <DependentUpon>RDAA-Step1-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1-2.aspx.designer.cs">
+      <DependentUpon>RDAA-Step1-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1.aspx.cs">
+      <DependentUpon>RDAA-Step1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\RDAA-Step1.aspx.designer.cs">
+      <DependentUpon>RDAA-Step1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\CSR\SelectIssueType.aspx.cs">
+      <DependentUpon>SelectIssueType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\CSR\SelectIssueType.aspx.designer.cs">
+      <DependentUpon>SelectIssueType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search-client.aspx.cs">
+      <DependentUpon>Search-client.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search-client.aspx.designer.cs">
+      <DependentUpon>Search-client.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\Customer.Master.cs">
+      <DependentUpon>Customer.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\Customer.Master.designer.cs">
+      <DependentUpon>Customer.Master</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\DateJournals.aspx.cs">
+      <DependentUpon>DateJournals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\DateJournals.aspx.designer.cs">
+      <DependentUpon>DateJournals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\Drafts.aspx.cs">
+      <DependentUpon>Drafts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\Drafts.aspx.designer.cs">
+      <DependentUpon>Drafts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\IDProtection.aspx.cs">
+      <DependentUpon>IDProtection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\IDProtection.aspx.designer.cs">
+      <DependentUpon>IDProtection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\PersonalInfo.aspx.cs">
+      <DependentUpon>PersonalInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\PersonalInfo.aspx.designer.cs">
+      <DependentUpon>PersonalInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\PlanInfo.aspx.cs">
+      <DependentUpon>PlanInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\PlanInfo.aspx.designer.cs">
+      <DependentUpon>PlanInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\Customers.aspx.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\Customers.aspx.designer.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\TicketHistory.aspx.cs">
+      <DependentUpon>TicketHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\TicketHistory.aspx.designer.cs">
+      <DependentUpon>TicketHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Sales\PersonalInfo.aspx.cs">
+      <DependentUpon>PersonalInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Sales\PersonalInfo.aspx.designer.cs">
+      <DependentUpon>PersonalInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Sales\SearchCustomer.aspx.cs">
+      <DependentUpon>SearchCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Sales\SearchCustomer.aspx.designer.cs">
+      <DependentUpon>SearchCustomer.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="font\fontawesome-webfont.eot" />
+    <None Include="font\fontawesome-webfont.ttf" />
+    <None Include="font\fontawesome-webfont.woff" />
+    <None Include="font\FontAwesome.otf" />
+    <None Include="img\Thumbs.db" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\IDPRO.csprojResolveAssemblyReference.cache" />
+    <Content Include="web\CSR\CustomerService.Master" />
+    <Content Include="web\Customer\Customer.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7628</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

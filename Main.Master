@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="IDPRO.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <%--<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />--%>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-formhelpers.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="scriptmanager" runat="server">
+    </asp:ScriptManager>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+             <%--   <asp:GridView ID="grdmenu" runat="server" GridLines="None" AutoGenerateColumns="False"
+                    OnRowCommand="grdmenu_RowCommand" OnRowDataBound="grdmenu_RowDataBound">
+                    <Columns>
+                        <asp:TemplateField>
+                            <ItemTemplate>--%>
+                                <div id="in-sub-nav">
+                                    <%--<a href="PersonalInfo.aspx" class="brand"><i class="icon-sitemap"></i></a>--%>
+                                    <ul class="nav nav-tabs" id="mymain">
+                                        <%--<li class="active"><a href='<%#Eval("weburl")%>' id="A3" runat="server"><i class="icon-suitcase">
+                                        </i>
+                                            <br>
+                                            <%#Eval("Department_Name")%></a></li>--%>
+                                  <%--      <li class="active"><a href="./web/Customer/Customer.aspx" id="cust" runat="server"><i
+                                            class="icon-suitcase"></i>
+                                            <br>
+                                            Customer</a></li>
+                                        <li class=""><a href="#" id="ticketing" runat="server"><i class="icon-retweet"></i>
+                                            <br>
+                                            Ticketing</a></li>--%>
+                                        <li class=""><a href="web/sales/SearchCustomer.aspx" id="sc" runat="server"><i class="icon-suitcase">
+                                        </i>
+                                            <br>
+                                            Sales</a></li>
+                                        <li class=""><a href="./OnBoarding.aspx" id="ob" runat="server"><i class="icon-retweet">
+                                        </i>
+                                            <br>
+                                            OnBoarding</a></li>
+                                        <li class=""><a href="./ClientDistributions.aspx" id="cd" runat="server"><i class=" icon-edit">
+                                        </i>
+                                            <br>
+                                            Orientation</a></li>
+                                        <li class=""><a href="./web/csr/CustomerService.aspx" id="cs" runat="server"><i class="icon-user-md">
+                                        </i>
+                                            <br>
+                                            Customer Service</a></li>
+                                        <li class=""><a href="./Negotiation.aspx" id="neg" runat="server"><i class="icon-money">
+                                        </i>
+                                            <br>
+                                            Negotiation</a></li>
+                                        <li class=""><a href="./Mails.aspx" runat="server"><i class="icon-envelope"></i>
+                                            <br>
+                                            Email</a></li>
+                                        <li class=""><a href="Dashboard.aspx" runat="server"><i class="icon-dashboard"></i>
+                                            <br>
+                                            Dashboard</a></li>
+                                        <li class=""><a href="./Reports.aspx" runat="server"><i class="icon-bar-chart"></i>
+                                            <br>
+                                            Reports</a></li>
+                                        <li class=""><a href="./AddEmployee.aspx" id="admin" runat="server"><i class="icon-user">
+                                        </i>
+                                            <br>
+                                            Admin</a></li>
+                                        <%--<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                            data-delay="1000" data-close-others="false">Dropdown <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li class="nav-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>--%>
+                                    </ul>
+                                </div>
+                           <%-- </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>--%>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <%--<div id="footer" class="clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="span12 bg pull-right">
+                    <p>
+                        Copyright My Company Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>--%>
+    <script src="js/jquery-1.9.0.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-selectbox.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-states.en_US.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-states.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-datepicker.js" type="text/javascript"></script>
+    <script src="js/bootstrap-formhelpers-datepicker.en_US.js" type="text/javascript"></script>
+    <script src="js/twitter-bootstrap-hover-dropdown.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var url = window.location.pathname;
+            var substr = url.split('/');
+            var urlaspx = substr[substr.length - 1];
+            $('#mymain').find('.active').removeClass('active');
+            $('#mymain li a').each(function () {
+                if (this.href.indexOf(urlaspx) >= 0) {
+                    $(this).parent().addClass('active');
+                }
+            });
+        });
+    </script>
+    </form>
+</body>
+</html>

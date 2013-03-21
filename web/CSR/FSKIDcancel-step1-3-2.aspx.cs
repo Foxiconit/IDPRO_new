@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace IDPRO
+{
+    public partial class FSKIDcancel_step1_3_2 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            switch (rdb.SelectedItem.Text)
+            {
+                case "Yes":
+                    pnlpayment.Visible = true;
+                    pnlaccountchange.Visible = false;
+                    break;
+                default:
+                    pnlpayment.Visible = false;
+                    pnlaccountchange.Visible = true;
+                    break;
+            }
+        }
+
+        protected void btnyes_Click(object sender, EventArgs e)
+        {
+            switch (rdbyes.SelectedItem.Text)
+            {
+                case "Yes":
+                    Response.Redirect("SelectIssueType.aspx");
+                    break;
+
+                default:
+                    Response.Redirect("CustomerService.aspx");
+                    break;
+            }
+        }
+        protected void btnNO_Click(object sender, EventArgs e)
+        {
+            switch (rdbNO.SelectedItem.Text)
+            {
+                case "Yes":
+                    Response.Redirect("SelectIssueType.aspx");
+                    break;
+
+                default:
+                    Response.Redirect("CustomerService.aspx");
+                    break;
+            }
+        }
+    }
+}
