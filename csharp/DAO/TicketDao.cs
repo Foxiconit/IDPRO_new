@@ -15,7 +15,7 @@ namespace IDPRO.csharp.DAO
         public int addticketsdetail(SqlConnection conn, SqlTransaction trans, Ticket ticket)
         {
             ConnectionDao connectiondao = new ConnectionDao();
-            //  string strreturn = IdProConstants.SUCCESS;
+            
             SqlCommand cmd = null;
             SqlDataReader rs = null;
             int TICKETID = 0;

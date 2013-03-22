@@ -313,7 +313,7 @@ namespace IDPRO.csharp.DAO
                 rs = cmd.ExecuteReader();
                 if (rs.Read())
                 {
-                    credit.Account_Id = (rs["Account_Id"].ToString().Trim());
+                    credit.Account_Id = Convert.ToInt32(rs["Account_Id"]);
                     credit.Creditor_Name = (rs["Creditor_Name"].ToString().Trim());
                     credit.Account_Number = (rs["Account_Number"].ToString().Trim());
                     credit.Orignal_Balance = (float)rs["Orignal_Balance"];
@@ -321,16 +321,16 @@ namespace IDPRO.csharp.DAO
                     credit.Current_Creditor_Name = (rs["Current_Creditor_Name"].ToString().Trim());
                     credit.Current_Creditor_Account_No = (rs["Current_Creditor_Account_Number"].ToString().Trim());
                     credit.Status = (rs["Status"].ToString().Trim());
-                    credit.Balance_at_Settlement =(float) rs["Balance_at_Settlement"];
+                    credit.Balance_at_Settlement = (float)rs["Balance_at_Settlement"];
                     credit.Settlement_Type = (rs["Settlement_Type"].ToString().Trim());
                     credit.Settlement_Amount = (float)rs["Settlement_Amount"];
                     credit.Fees_Amount = (float)rs["Fees_Amount"];
                     credit.Settlement_Date = Convert.ToDateTime(rs["Settlement_Date"]);
                     credit.Settlement_Creditor_Name = (rs["Settlement_Creditor_Name"].ToString().Trim());
-                    credit.AddedBy  = (rs["added_by"].ToString().Trim());
-                    credit.AddedDate  = Convert.ToDateTime(rs["Added_date"]);
-                    credit.Last_Updatedby  = (rs["Last_Updated_By"].ToString().Trim());
-                    credit.Last_UpdatedDate  = Convert.ToDateTime(rs["Last_Updated_date"]);
+                    credit.AddedBy = (rs["added_by"].ToString().Trim());
+                    credit.AddedDate = Convert.ToDateTime(rs["Added_date"]);
+                    credit.Last_Updatedby = (rs["Last_Updated_By"].ToString().Trim());
+                    credit.Last_UpdatedDate = Convert.ToDateTime(rs["Last_Updated_date"]);
                 }
                 else
                 {
@@ -403,19 +403,7 @@ namespace IDPRO.csharp.DAO
 
 
 
-            //List<Credit> Creditlist = new List<Credit>();
-            //ConnectionDao ConnectionDao = new ConnectionDao();
-            //SqlDataAdapter adp = new SqlDataAdapter("select Credit_id from credits where Account_Id=@accountid", ConnectionDao.getConnection());
-            //DataSet ds2 = new DataSet();
-            //adp.Fill(ds2);
-            //foreach (DataRow dr in ds2.Tables[0].Rows)
-            //{
-            //    Credit credit = new Credit();
-            //    credit.Credit_Id = Convert.ToInt32(dr["Credit_id"]);               
-            //    Creditlist.Add(credit);
-            //}
-
-            //return Creditlist;
+         
         }
 
     }

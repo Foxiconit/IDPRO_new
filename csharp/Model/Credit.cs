@@ -9,7 +9,7 @@ namespace IDPRO.csharp.Model
     {
         //put all getter setter based on Credit tableok
         public long Credit_Id { get; set; }
-        public string Account_Id { get; set; }
+        public long Account_Id { get; set; }  //this is account id and has to be long
         public string Creditor_Name { get; set; }
         public string Account_Number { get; set; }
         public float Orignal_Balance { get; set; }

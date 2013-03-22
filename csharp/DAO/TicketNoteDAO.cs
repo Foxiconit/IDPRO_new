@@ -13,33 +13,55 @@ namespace IDPRO.csharp.DAO
     {
         public List<TicketNote> getticketnotebyid(long ticketid)
         {
+            TicketNote ticketnote = new TicketNote();
             List<TicketNote> ticketnotelist = new List<TicketNote>();
             ConnectionDao ConnectionDao = new ConnectionDao();
-            SqlDataAdapter adp = new SqlDataAdapter("select * from TicketNote where ticketid='" + ticketid  + "'", ConnectionDao.getConnection());
-            DataSet ds2 = new DataSet();
-            adp.Fill(ds2);
-            foreach (DataRow dr in ds2.Tables[0].Rows)
+
+            SqlCommand cmd = null;
+            SqlConnection conn = null;
+            SqlDataReader dr = null;
+            string query = "select * from TicketNote where ticketid=@ticketid";          
+            try
             {
-                TicketNote ticketnote = new TicketNote();
-                if (dr["ticketid"] != null)
+                conn = ConnectionDao.getConnection();
+                cmd = ConnectionDao.getSqlCommandWithoutTransaction(query, conn);
+                SqlParameter param1 = new SqlParameter();
+                param1.ParameterName = "@ticketid";
+                param1.Value = ticketid;
+                cmd.Parameters.Add(param1);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    ticketnote.TicketID = Convert.ToInt32(dr["ticketid"]);
-                }
+                   if (dr["ticketid"] != null)
+                   {
+                       ticketnote.TicketID = Convert.ToInt32(dr["ticketid"]);
+                   }
 
-                if (dr["notedate"] != null)
-                {
-                    ticketnote.NoteDate = Convert.ToDateTime(dr["notedate"]);
-                }
+                   if (dr["notedate"] != null)
+                   {
+                       ticketnote.NoteDate = Convert.ToDateTime(dr["notedate"]);
+                   }
 
-                if (dr["note"] != null)
-                {
-                    ticketnote.Note = dr["note"].ToString();
+                   if (dr["note"] != null)
+                   {
+                       ticketnote.Note = dr["note"].ToString();
+                   }
+                   ticketnotelist.Add(ticketnote);
                 }
-                ticketnotelist.Add(ticketnote);
+                dr.Close();
             }
+            catch (Exception exception)
+            {
+                System.Diagnostics.Trace.WriteLine("[TicketNote:GetList] Exception " + exception.StackTrace);
+                ticketnotelist = null;
 
-            return ticketnotelist;
-
+            }
+            finally
+            {
+                ConnectionDao.closeConnection(conn);
+                ConnectionDao.closeDabaseEntities(cmd, dr);
+            }            
+            return ticketnotelist;            
         }
 
         public int addticketsNotedetail(SqlConnection conn, SqlTransaction trans, TicketNote ticketnote)
@@ -49,8 +71,7 @@ namespace IDPRO.csharp.DAO
             SqlCommand cmd = null;
             SqlDataReader rs = null;
             int TICKETNOTEID = 0;
-            string query = "INSERT INTO TicketNote([ticketid],[notedate],[note])VALUES (@ticketid,@notedate,@note);SELECT Noteid=scope_identity();";
-            // string query = "INSERT INTO TicketNote([ticketid],[note])VALUES (@ticketid,@note);SELECT Noteid=scope_identity();";
+            string query = "INSERT INTO TicketNote([ticketid],[notedate],[note])VALUES (@ticketid,@notedate,@note);SELECT Noteid=scope_identity();";            
             try
             {
                 cmd = connectiondao.getSqlCommand(query, conn, trans);
@@ -69,8 +90,6 @@ namespace IDPRO.csharp.DAO
                 parm3.ParameterName = "@note";
                 parm3.Value = ticketnote.Note;
                 cmd.Parameters.Add(parm3);
-
-
 
                 rs = cmd.ExecuteReader();
                 if (rs.Read())

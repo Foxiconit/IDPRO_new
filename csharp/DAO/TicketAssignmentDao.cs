@@ -14,38 +14,59 @@ namespace IDPRO.csharp.DAO
         public List<TicketAssignment> getticketassignmentbyid(long ticketid)
         {
             List<TicketAssignment> ticketassignmentlist = new List<TicketAssignment>();
+            TicketAssignment ticketassignment = new TicketAssignment();
             ConnectionDao ConnectionDao = new ConnectionDao();
-            SqlDataAdapter adp = new SqlDataAdapter("select * from TicketAssignment where ticketid='" + ticketid + "'", ConnectionDao.getConnection());
-            DataSet ds2 = new DataSet();
-            adp.Fill(ds2);
-            foreach (DataRow dr in ds2.Tables[0].Rows)
+            SqlCommand cmd = null;
+            SqlConnection conn = null;
+            SqlDataReader dr = null;            
+            string query = "select * from TicketAssignment where ticketid=@ticketid";
+            try
             {
-                TicketAssignment ticketassignment = new TicketAssignment();
-                if (dr["ticketid"] != null)
+                conn = ConnectionDao.getConnection();
+                cmd = ConnectionDao.getSqlCommandWithoutTransaction(query, conn);
+                SqlParameter param1 = new SqlParameter();
+                param1.ParameterName = "@ticketid";
+                param1.Value = ticketid;
+                cmd.Parameters.Add(param1);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    ticketassignment.TicketID = Convert.ToInt32(dr["ticketid"]);
-                }
+                    if (dr["ticketid"] != null)
+                    {
+                        ticketassignment.TicketID = Convert.ToInt32(dr["ticketid"]);
+                    }
 
-                if (dr["assignby"] != null)
-                {
-                    ticketassignment.AssignBy = dr["assignby"].ToString();
-                }
+                    if (dr["assignby"] != null)
+                    {
+                        ticketassignment.AssignBy = dr["assignby"].ToString();
+                    }
 
-                if (dr["assignto"] != null)
-                {
-                    ticketassignment.AssignTo = dr["assignto"].ToString();
-                }
+                    if (dr["assignto"] != null)
+                    {
+                        ticketassignment.AssignTo = dr["assignto"].ToString();
+                    }
 
-                if (dr["assigndate"] != null)
-                {
-                    ticketassignment.AssignDate = Convert.ToDateTime(dr["assigndate"]);
+                    if (dr["assigndate"] != null)
+                    {
+                        ticketassignment.AssignDate = Convert.ToDateTime(dr["assigndate"]);
+                    }
+                    ticketassignmentlist.Add(ticketassignment);
                 }
+                dr.Close();
+            }
+            catch (Exception exception)
+            {
+                System.Diagnostics.Trace.WriteLine("[TicketAssignmentList:GetList] Exception " + exception.StackTrace);
+                ticketassignmentlist = null;
 
-                ticketassignmentlist.Add(ticketassignment);
+            }
+            finally
+            {
+                ConnectionDao.closeConnection(conn);
+                ConnectionDao.closeDabaseEntities(cmd, dr);
             }
 
-            return ticketassignmentlist;
-
+            return ticketassignmentlist;          
         }
 
         public string addticketsAssignment(SqlConnection conn, SqlTransaction trans, TicketAssignment ticketassignment)
@@ -54,7 +75,7 @@ namespace IDPRO.csharp.DAO
             string strreturn = IdProConstants.SUCCESS;
             SqlCommand cmd = null;
             SqlDataReader rs = null;
-            // int TICKETNOTEID = 0;
+            
             string query = "INSERT INTO TicketAssignment([ticketid],[assignby],[assignto],[assigndate])VALUES (@ticketid,@assignby,@assignto,@assigndate)";
 
             try
@@ -83,10 +104,7 @@ namespace IDPRO.csharp.DAO
 
 
                 rs = cmd.ExecuteReader();
-                if (rs.Read())
-                {
-                    // TICKETAssignment = Int32.Parse(rs["Assignid"].ToString());
-                }
+               
             }
             catch (Exception exception)
             {
