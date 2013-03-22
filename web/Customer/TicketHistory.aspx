@@ -39,17 +39,17 @@
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
                                         <asp:BoundField DataField="accountid" HeaderText="Account ID" SortExpression="Name" />
-                                        <asp:BoundField DataField="tickettype" HeaderText="Ticket Type ID" SortExpression="SSN" />
+                                        <asp:BoundField DataField="tickettypestring" HeaderText="Ticket Type ID" SortExpression="SSN" />
                                         <asp:BoundField DataField="assignto" HeaderText="Assign To" SortExpression="Days of Week" />
-                                        <asp:BoundField DataField="Assignby" HeaderText="User Name" SortExpression="Time" />
+                                        <asp:BoundField DataField="openby" HeaderText="User Name" SortExpression="Time" />
                                         <asp:BoundField DataField="opendate" HeaderText="Open Date" SortExpression="End Date" />
                                         <asp:BoundField DataField="status" HeaderText="Status" SortExpression="End Date" />
                                         <asp:BoundField DataField="priority" HeaderText="Priority" SortExpression="End Date" />
                                         <asp:BoundField DataField="assigndate" HeaderText="Assign Date" SortExpression="End Date" />
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="rb" Text="Notes" runat="server" CommandName="note" ></asp:LinkButton> | <asp:LinkButton
-                                                    ID="LinkButton1" Text="Assignment History" runat="server" CommandName="assign"></asp:LinkButton></ItemTemplate>
+                                                <asp:LinkButton ID="rb" Text="Notes" runat="server" CommandName="note" CommandArgument=<%#Eval("ticketid") %> ></asp:LinkButton> | <asp:LinkButton
+                                                    ID="LinkButton1" Text="Assignment History" runat="server" CommandName="assign" CommandArgument=<%#Eval("ticketid") %>></asp:LinkButton></ItemTemplate>
                                         </asp:TemplateField>
                                     </Columns>
                                     <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />

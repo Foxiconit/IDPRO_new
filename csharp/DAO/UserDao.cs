@@ -43,17 +43,17 @@ namespace IDPRO.csharp.DAO
             SqlConnection conn = null;
             SqlDataReader rs = null;
 
-            string query = "select * from Users where userName='" + userName + "'";
+            string query = "select * from Users where userName=@username";
 
             try
             {
                 conn = connectionDao.getConnection();
                 cmd = connectionDao.getSqlCommandWithoutTransaction(query, conn);
 
-                //SqlParameter param1 = new SqlParameter();
-                //param1.ParameterName = emp.Username;
-                //param1.Value = emp.Username;
-                //cmd.Parameters.Add(param1);
+                SqlParameter param1 = new SqlParameter();
+                param1.ParameterName = "@username";
+                param1.Value = userName;
+                cmd.Parameters.Add(param1);
 
                 rs = cmd.ExecuteReader();
 

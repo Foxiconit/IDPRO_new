@@ -16,9 +16,9 @@ using System.Web.UI.HtmlControls;
 namespace IDPRO.web.Customer
 {
     public partial class TicketHistory : System.Web.UI.Page
-    {   
-        
-        public long ticketid = 0;
+    {
+
+       // public long ticketid = 103;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,52 +26,56 @@ namespace IDPRO.web.Customer
             if (!IsPostBack)
             {
 
+                Ticket ticket = new Ticket();
+                ticket.AccountID = 1006;
+
                 TicketDao ticketdao = new TicketDao();
-                ticketdao.getticketid(ticketid);
-                fillTickethistory();
-                fillTicketassignmenthistory();
-                fillTicketnotehistory();
+                ticket = ticketdao.getticketid(ticket.AccountID);
+                fillTicketGrid(ticket.TicketID);
+
 
             }
 
         }
-        public void fillTickethistory()
+
+        public void fillTicketGrid(long ticketid)
         {
-            TicketDao ticketdao = new TicketDao();
-            DataSet ds = new DataSet();
-            ds = ticketdao.gettickethistory(ticketid);
-            
-            grdtickethistory.DataSource = ds;
+            Ticket ticketobj = new Ticket();
+            List<Ticket> listTickets = new List<Ticket>();
+            Ticket ticket = new TicketService().getticketbyticketid(ticketid);
+            listTickets.Add(ticket);
+            grdtickethistory.DataSource = listTickets;
             grdtickethistory.DataBind();
         }
-        public void fillTicketassignmenthistory()
-        {
-            TicketDao ticketdao = new TicketDao();
-            DataSet ds1 = new DataSet();
-            ds1 = ticketdao.getticketassignmenthistory(ticketid);
-            gridassignmenthistory.DataSource = ds1;
-            gridassignmenthistory.DataBind();
-        }
-        public void fillTicketnotehistory()
-        {
-            TicketDao ticketdao = new TicketDao();
-            DataSet ds2 = new DataSet();
-            ds2 = ticketdao.getticketnodehistory(ticketid);
-            gridnote.DataSource  = ds2;
-            gridnote.DataBind();
-        }
+
+
 
         protected void grdtickethistory_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "note")
             {
+
+                TicketNoteDAO ticketnotedao = new TicketNoteDAO();
+                List<TicketNote> ticketnotelist = new List<TicketNote>();
+                Int32 ticketid = Convert.ToInt32(e.CommandArgument);
+
+                ticketnotelist = ticketnotedao.getticketnotebyid(ticketid);
+                gridnote.DataSource = ticketnotelist;
+                gridnote.DataBind();
                 grdnote.Visible = true;
             }
 
             if (e.CommandName == "assign")
             {
                 grdassign.Visible = true;
+                TicketAssignmentDao ticketassignmentdao = new TicketAssignmentDao();
+                List<TicketAssignment> ticketassignmentlist = new List<TicketAssignment>();
+                Int32 ticketid = Convert.ToInt32(e.CommandArgument);
+
+                ticketassignmentlist = ticketassignmentdao.getticketassignmentbyid(ticketid);
+                gridassignmenthistory.DataSource = ticketassignmentlist;
+                gridassignmenthistory.DataBind();
             }
-        }       
+        }
     }
 }

@@ -273,6 +273,7 @@
     <Compile Include="csharp\DAO\ConnectionDao.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\DAO\CreditDAO.cs" />
     <Compile Include="csharp\DAO\CustomerDAO.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -285,15 +286,18 @@
     <Compile Include="csharp\DAO\MenuDao.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\DAO\TicketAssignmentDao.cs" />
     <Compile Include="csharp\DAO\TicketDao.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\DAO\TicketNoteDAO.cs" />
     <Compile Include="csharp\DAO\UserDao.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="csharp\Model\Account.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\Model\Credit.cs" />
     <Compile Include="csharp\Model\customer.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -307,13 +311,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="csharp\Model\TicketAssignment.cs" />
-    <Compile Include="csharp\Model\TicketNode.cs" />
+    <Compile Include="csharp\Model\TicketNote.cs" />
     <Compile Include="csharp\Model\User.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="csharp\Services\AccountServices.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\Services\CreditServices.cs" />
     <Compile Include="csharp\Services\CustomerServices.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -323,6 +328,8 @@
     <Compile Include="csharp\Services\EmployeeService.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\Services\TicketAssignmentService.cs" />
+    <Compile Include="csharp\Services\TicketNoteService.cs" />
     <Compile Include="csharp\Services\TicketService.cs">
       <SubType>Code</SubType>
     </Compile>

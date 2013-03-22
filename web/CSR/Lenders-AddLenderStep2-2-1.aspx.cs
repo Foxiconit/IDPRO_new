@@ -21,6 +21,15 @@ namespace IDPRO
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            string loginsession = Convert.ToString(Session["username"]);
+
+            if (loginsession == null)
+            {
+
+                Response.Redirect("../../employeelogin.aspx?login=failed");
+
+            }
+
             if (!Page.IsPostBack)
             {
                 fillTicketAssigned();
@@ -38,16 +47,30 @@ namespace IDPRO
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             TicketService ticketservice = new TicketService();
+            Session["accountid"] = "1006";
             TicketAssignment ticketassignment = new TicketAssignment();
             Ticket ticket = new Ticket();
-            TicketNode ticketnode = new TicketNode();
+            TicketNote ticketnote = new TicketNote();
             ticket.TicketTypeString = drptickettype.SelectedItem.Text.Trim();
             ticket.Priority = dropPriorty.Text.Trim();
             ticket.AssignTo = DropAssignedTo.Text.Trim();
-            ticketnode.Note = txtdescription.Text.Trim();
+            ticket.AccountID =Convert.ToInt32 (Session["accountid"]);
             ticket.AssignDate = System.DateTime.Now;
+            ticket.openby = Session["username"].ToString ();
+            ticket.ticketAssignment = new List<TicketAssignment>();
+            ticket.ticketNotes  = new List<TicketNote>();
+
+            ticketassignment.AssignDate = System.DateTime.Now;
+            ticketassignment.AssignBy = HttpContext.Current.Session["username"].ToString();
+            ticketassignment.AssignTo = DropAssignedTo.Text.Trim();
+            ticket.ticketAssignment.Add(ticketassignment);
+
+            ticketnote.Note = txtdescription.Text.Trim();
+            ticketnote.NoteDate = System.DateTime.Now;
+            
+            ticket.ticketNotes.Add(ticketnote);
             string msg;
-            msg = ticketservice.TicketAdd(ticket, ticketassignment, ticketnode);
+            msg = ticketservice.TicketAdd(ticket);
             //Response.Redirect("Lenders-TicketAdded.aspx");
             if (msg == "Success")
             {

@@ -17,7 +17,7 @@ namespace IDPRO
         
         
         SqlConnection conn = new SqlConnection();
-        string str;
+        
       
         
         public Int32 intempid = 0;

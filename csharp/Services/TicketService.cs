@@ -11,19 +11,23 @@ namespace IDPRO.csharp.Services
 {
     public class TicketService
     {
-        public string TicketAdd(Ticket ticket, TicketAssignment ticketassignment, TicketNode ticketnode)
+        public string TicketAdd(Ticket ticket)
         {
-           
+
             SqlConnection conn = null;
             SqlTransaction trans = null;
 
             string returnString = IdProConstants.SUCCESS;
 
-           
+
             TicketDao ticketdao = new TicketDao();
-       
+
+            TicketNoteDAO ticketnotedao = new TicketNoteDAO();
+
+            TicketAssignmentDao ticketasignmentdao = new TicketAssignmentDao();
+
             ConnectionDao ConnectionDao = new ConnectionDao();
-            
+
             try
             {
                 conn = ConnectionDao.getConnection();
@@ -31,59 +35,74 @@ namespace IDPRO.csharp.Services
                 //ticket.tickettypeid = ticketdao.addticketsTypedetail(conn, trans, ticket);
                 //if (!ticket.tickettypeid.Equals(0))
                 //{
-                  ticket.TicketID  = ticketdao.addticketsdetail(conn, trans, ticket);
-                  if (!ticket.TicketID.Equals(0))
+                ticket.TicketID = ticketdao.addticketsdetail(conn, trans, ticket);
+                if (!ticket.TicketID.Equals(0))
+                {
+                    foreach (TicketNote ticketnote in ticket.ticketNotes)
                     {
-                        ticketnode.TicketID = ticket.TicketID;
-                        ticketnode.NoteDate = ticket.AssignDate;
-                      ticketnode.NoteID = ticketdao.addticketsNotedetail(conn, trans, ticketnode);
-
-                      if (!ticketnode.NoteID.Equals(0))
+                        ticketnote.TicketID = ticket.TicketID;
+                        ticketnote.NoteID = ticketnotedao.addticketsNotedetail(conn, trans, ticketnote);
+                        if (!ticketnote.NoteID.Equals(0))
                         {
-                            ticketassignment.TicketID = ticket.TicketID;
-                            ticketassignment.AssignTo = ticket.AssignTo;
-                            ticketassignment.AssignDate = ticket.AssignDate;
-                            returnString = ticketdao.addticketsAssignment(conn, trans, ticketassignment);
+                            foreach (TicketAssignment ticketAssignment in ticket.ticketAssignment)
+                            {
+                                ticketAssignment.TicketID = ticket.TicketID;
+                                returnString = ticketasignmentdao.addticketsAssignment(conn, trans, ticketAssignment);
+                                if (returnString.Equals(IdProConstants.SUCCESS))
+                                {
+                                    trans.Commit();
+                                }
+                                else
+                                {
+                                    trans.Rollback();
+                                }
+                            }
                         }
                         else
                         {
-                            trans.Commit();
+
+                            trans.Rollback();
                         }
                     }
-                    else
-                    {
-                        trans.Rollback();
-                    }
-
-                    trans.Commit();
                 }
-                //else
-                //{
-                //    trans.Rollback();
-                //}
- 
+                else
+                {
 
-            //}
-              
+                    trans.Rollback();
+                }
+               
+            }
             
             catch (Exception exception)
             {
                 trans.Rollback();
-                System.Diagnostics.Trace.WriteLine("[EmployeeServices:addEmployee] Exception " + exception.StackTrace);
+                System.Diagnostics.Trace.WriteLine("[TicketService:AddTicket] Exception " + exception.StackTrace);
 
             }
             finally
             {
                 ConnectionDao.closeConnection(conn);
-
-
             }
 
             return returnString;
-            
-          
+
+
 
         }
+
+        public Ticket getticketbyticketid(long ticketid)
+        {
+            Ticket ticket = new Ticket();
+            ticket = new TicketDao().getticketbyticketid(ticketid);
+            ticket.ticketNotes = new List<TicketNote>();
+            ticket.ticketNotes = new TicketNoteService().getticketnotebyid(ticketid);
+            ticket.ticketAssignment  = new List<TicketAssignment>();
+            ticket.ticketAssignment = new TicketAssignmentService().getticketassignmentbyid(ticketid);
+            return ticket;
+
+        }
+
+
 
     }
 }

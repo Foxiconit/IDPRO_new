@@ -5,7 +5,7 @@ using System.Web;
 
 namespace IDPRO.csharp.Model
 {
-    public class TicketNode
+    public class TicketNote
     {
        
         public long NoteID { get; set; }
