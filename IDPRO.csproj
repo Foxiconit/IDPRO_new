@@ -116,7 +116,7 @@
     <Content Include="obj\Debug\IDPRO.pdb" />
     <Content Include="web\CSR\AccountInformationChange.aspx" />
     <Content Include="AddEmployee.aspx" />
-    <Content Include="BankInfo.aspx" />
+    <Content Include="web\Sales\BankInfo.aspx" />
     <Content Include="web\CSR\BankingInformationChange.aspx" />
     <Content Include="web\CSR\BankingInformationChange2.aspx" />
     <Content Include="web\CSR\BankingInformationChangeConfirm.aspx" />
@@ -146,7 +146,7 @@
     <Content Include="web\CSR\Lenders.xml" />
     <Content Include="Create-client.aspx" />
     <Content Include="CreateTicket.aspx" />
-    <Content Include="Creditor.aspx" />
+    <Content Include="web\Sales\Creditor.aspx" />
     <Content Include="Creditor.xml" />
     <Content Include="css\bootstrap-formhelpers.css" />
     <Content Include="css\bootstrap-responsive.css" />
@@ -735,11 +735,11 @@
     <Compile Include="AddEmployee.aspx.designer.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BankInfo.aspx.cs">
+    <Compile Include="web\Sales\BankInfo.aspx.cs">
       <DependentUpon>BankInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BankInfo.aspx.designer.cs">
+    <Compile Include="web\Sales\BankInfo.aspx.designer.cs">
       <DependentUpon>BankInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\CSR\BankingInformationChange.aspx.cs">
@@ -847,11 +847,11 @@
     <Compile Include="CreateTicket.aspx.designer.cs">
       <DependentUpon>CreateTicket.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Creditor.aspx.cs">
+    <Compile Include="web\Sales\Creditor.aspx.cs">
       <DependentUpon>Creditor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Creditor.aspx.designer.cs">
+    <Compile Include="web\Sales\Creditor.aspx.designer.cs">
       <DependentUpon>Creditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\CSR\Courtesy-Call-step1.aspx.cs">

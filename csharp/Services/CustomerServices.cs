@@ -48,7 +48,7 @@ namespace IDPRO.csharp.Services
                        returnString =  customerAccountO2Mservice.addCustomerAccountO2MInfo(conn, trans,customerAccountO2M);                     
 
                     }
-                    str = secondaryClient.FirstName;
+                    str = secondaryClient.CoFirstName ;
 
                     if (str!=null && !"".Equals(str) && IdProConstants.SUCCESS.Equals(returnString))
                     {

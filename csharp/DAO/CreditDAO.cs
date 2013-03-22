@@ -296,9 +296,58 @@ namespace IDPRO.csharp.DAO
         public Credit getCreditById(long creditId)
         {
             //get Credit Object based on Id
-
-
-            return null;
+            ConnectionDao ConnectionDao = new ConnectionDao();
+            Credit credit = new Credit();
+            SqlCommand cmd = null;
+            SqlConnection conn = null;
+            SqlDataReader rs = null;
+            string query = "select * from credit where Credit_id=@id";
+            try
+            {
+                conn = ConnectionDao.getConnection();
+                cmd = ConnectionDao.getSqlCommandWithoutTransaction(query, conn);
+                SqlParameter param1 = new SqlParameter();
+                param1.ParameterName = "@id";
+                param1.Value = creditId;
+                cmd.Parameters.Add(param1);
+                rs = cmd.ExecuteReader();
+                if (rs.Read())
+                {
+                    credit.Account_Id = (rs["Account_Id"].ToString().Trim());
+                    credit.Creditor_Name = (rs["Creditor_Name"].ToString().Trim());
+                    credit.Account_Number = (rs["Account_Number"].ToString().Trim());
+                    credit.Orignal_Balance = (float)rs["Orignal_Balance"];
+                    credit.Loan_Type = (rs["Loan_Type"].ToString().Trim());
+                    credit.Current_Creditor_Name = (rs["Current_Creditor_Name"].ToString().Trim());
+                    credit.Current_Creditor_Account_No = (rs["Current_Creditor_Account_Number"].ToString().Trim());
+                    credit.Status = (rs["Status"].ToString().Trim());
+                    credit.Balance_at_Settlement =(float) rs["Balance_at_Settlement"];
+                    credit.Settlement_Type = (rs["Settlement_Type"].ToString().Trim());
+                    credit.Settlement_Amount = (float)rs["Settlement_Amount"];
+                    credit.Fees_Amount = (float)rs["Fees_Amount"];
+                    credit.Settlement_Date = Convert.ToDateTime(rs["Settlement_Date"]);
+                    credit.Settlement_Creditor_Name = (rs["Settlement_Creditor_Name"].ToString().Trim());
+                    credit.AddedBy  = (rs["added_by"].ToString().Trim());
+                    credit.AddedDate  = Convert.ToDateTime(rs["Added_date"]);
+                    credit.Last_Updatedby  = (rs["Last_Updated_By"].ToString().Trim());
+                    credit.Last_UpdatedDate  = Convert.ToDateTime(rs["Last_Updated_date"]);
+                }
+                else
+                {
+                    credit = null;
+                }
+            }
+            catch (Exception exception)
+            {
+                System.Diagnostics.Trace.WriteLine("[CreditDao:getcreditbyID] Exception " + exception.StackTrace);
+                credit = null;
+            }
+            finally
+            {
+                ConnectionDao.closeConnection(conn);
+                ConnectionDao.closeDabaseEntities(cmd, rs);
+            }
+            return credit;
 
         }
 
@@ -313,7 +362,7 @@ namespace IDPRO.csharp.DAO
             SqlConnection conn = null;
             SqlDataReader rs = null;
 
-            string query = "select Credit_id from credit where Account_Id=@accountid"; 
+            string query = "select Credit_id from credit where Account_Id=@accountid";
 
             try
             {
@@ -329,7 +378,7 @@ namespace IDPRO.csharp.DAO
                     credit.Credit_Id = Convert.ToInt32(rs["Credit_id"]);
                     Creditlist.Add(credit);
                 }
-                rs.Close();              
+                rs.Close();
 
             }
             catch (Exception exception)

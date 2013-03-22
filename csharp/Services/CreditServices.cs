@@ -92,19 +92,40 @@ namespace IDPRO.csharp.Services
 
 
             //call dao method
-            return null;
+
+            CreditDAO creditdao = new CreditDAO();
+            return creditdao.getCreditById(creditId);
+            
 
         }
 
 
         public List<Credit> getCreditsByAccountID(long accountID)
         {
-
             //call dao method
-            return null;
-
+             List<Credit> creditlist = new List<Credit>();
+            SqlConnection conn = null;
+            SqlTransaction trans = null;          
+            
+            ConnectionDao ConnectionDao = new ConnectionDao();
+            try
+            {
+                conn = ConnectionDao.getConnection();
+                trans = conn.BeginTransaction();
+                creditlist = new CreditDAO().getCreditsByAccountID(accountID);                
+            }
+            catch (Exception exception)
+            {
+                trans.Rollback();
+                System.Diagnostics.Trace.WriteLine("[CreditService:Creditlist] Exception " + exception.StackTrace);
+            }
+            finally
+            {
+                ConnectionDao.closeConnection(conn);
+            }
+            return creditlist;
+        }
+           
         }
 
-
     }
-}
