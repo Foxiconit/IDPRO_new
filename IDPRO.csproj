@@ -116,6 +116,7 @@
     <Content Include="obj\Debug\IDPRO.pdb" />
     <Content Include="web\CSR\AccountInformationChange.aspx" />
     <Content Include="AddEmployee.aspx" />
+    <Content Include="web\Customer\demo.aspx" />
     <Content Include="web\Sales\BankInfo.aspx" />
     <Content Include="web\CSR\BankingInformationChange.aspx" />
     <Content Include="web\CSR\BankingInformationChange2.aspx" />
@@ -734,6 +735,13 @@
     </Compile>
     <Compile Include="AddEmployee.aspx.designer.cs">
       <DependentUpon>AddEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Customer\demo.aspx.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Customer\demo.aspx.designer.cs">
+      <DependentUpon>demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\Sales\BankInfo.aspx.cs">
       <DependentUpon>BankInfo.aspx</DependentUpon>
