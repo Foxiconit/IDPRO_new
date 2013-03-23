@@ -640,7 +640,23 @@ margin-bottom: 5px;
     width: 120px !important; 
     
 }
+.bankinfo .control-group > .control-label {
+ 
+  width: 140px;
+  
+}
 
+.bankinfo .check {
+ 
+  height:26px;
+  padding: 1px 17px;
+  
+}
+.bankinfo a {
+ 
+font-weight:bold;
+  
+}
 .form-horizontal .control-group > .csf-label {
  
   width: 140px;

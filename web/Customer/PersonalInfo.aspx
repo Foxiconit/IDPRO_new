@@ -194,7 +194,6 @@
                                 <div class="controls">
                                     <asp:DropDownList ID="DropDownList3" runat="server" CssClass="span4">
                                         <asp:ListItem Text="Active"></asp:ListItem>
-                                        
                                     </asp:DropDownList>
                                 </div>
                             </div>
