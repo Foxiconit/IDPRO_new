@@ -28,7 +28,7 @@ namespace IDPRO.csharp.DAO
 
                 SqlParameter parm1 = new SqlParameter();
                 parm1.ParameterName = "@accountid";
-                parm1.Value = ticket.AccountID;///don't use session here, it has to be set from aspx.cs, set fron aspx.cs
+                parm1.Value = ticket.AccountID;
 
                 cmd.Parameters.Add(parm1);
 
@@ -92,54 +92,104 @@ namespace IDPRO.csharp.DAO
 
         }
 
+        //rohit, can you write here update ticket ,same way you wote updatecredit.ok i will .. no needto write update notes or assignment--only ticketok
 
-        // here you will have ticket_note objet passed instead of ticket. ticket note will have ticket id in it. like table ticket assignment
-
-
-        public int addticketsTypedetail(SqlConnection conn, SqlTransaction trans, Ticket ticket)
+        public string updateticket(SqlConnection conn, SqlTransaction trans, Ticket ticket)
         {
-            ConnectionDao connectiondao = new ConnectionDao();
-            //string strreturn = IdProConstants.SUCCESS;
+
+            // update code;  Based on id in Credit. update all the info no matter what changed.
+            ConnectionDao ConnectionDao = new ConnectionDao();
+            string returnString = IdProConstants.SUCCESS;
+
+
             SqlCommand cmd = null;
             SqlDataReader rs = null;
-            int TICKETNOTEID = 0;
-            string query = "INSERT INTO TicketType([Tickettype],[Priority],[assignment])VALUES (@Tickettype,@Priority,@assignment);SELECT TicketType_id=scope_identity();";
+
+            string query = "Update ticket set accountid=@accountid,tickettype=@tickettype,assignto=@assignto,openby=@openby,opendate=@opendate,closedate=@closedate,status=@status,priority=@priority,assigndate=@assigndate,closeby=@closeby WHERE ticketid=@id";
 
             try
             {
-                cmd = connectiondao.getSqlCommand(query, conn, trans);
 
-                SqlParameter parm1 = new SqlParameter();
-                parm1.ParameterName = "@Tickettype";
-                parm1.Value = ticket.TicketTypeString;
-                cmd.Parameters.Add(parm1);
+                cmd = ConnectionDao.getSqlCommand(query, conn, trans);
 
-                SqlParameter parm2 = new SqlParameter();
-                parm2.ParameterName = "@Priority";
-                parm2.Value = ticket.Priority;
-                cmd.Parameters.Add(parm2);
+                SqlParameter param1 = new SqlParameter();
+                param1.ParameterName = "@accountid";
+                param1.Value = ticket.AccountID;
+                cmd.Parameters.Add(param1);
 
-                SqlParameter parm3 = new SqlParameter();
-                parm3.ParameterName = "@assignment";
-                parm3.Value = ticket.AssignTo;
-                cmd.Parameters.Add(parm3);
+                SqlParameter param2 = new SqlParameter();
+                param2.ParameterName = "@tickettype";
+                param2.Value = ticket.TicketTypeString;
+                cmd.Parameters.Add(param2);
 
-                rs = cmd.ExecuteReader();
-                if (rs.Read())
-                {
-                    TICKETNOTEID = Int32.Parse(rs["TicketType_id"].ToString());
-                }
+                SqlParameter param3 = new SqlParameter();
+                param3.ParameterName = "@assignto";
+                param3.Value = ticket.AssignTo;
+                cmd.Parameters.Add(param3);
+
+                SqlParameter param4 = new SqlParameter();
+                param4.ParameterName = "@openby";
+                param4.Value = ticket.openby;
+                cmd.Parameters.Add(param4);
+
+                SqlParameter param5 = new SqlParameter();
+                param5.ParameterName = "@opendate";
+                param5.Value = ticket.OpenDate;
+                cmd.Parameters.Add(param5);
+
+                SqlParameter param6 = new SqlParameter();
+                param6.ParameterName = "@closedate";
+                param6.Value = ticket.CloseDate;
+                cmd.Parameters.Add(param6);
+
+
+                SqlParameter param7 = new SqlParameter();
+                param7.ParameterName = "@status";
+                param7.Value = ticket.Status;
+                cmd.Parameters.Add(param7);
+
+                SqlParameter param10 = new SqlParameter();
+                param10.ParameterName = "@priority";
+                param10.Value = ticket.Priority;
+                cmd.Parameters.Add(param10);
+
+
+                SqlParameter param11 = new SqlParameter();
+                param11.ParameterName = "@assigndate";
+                param11.Value =ticket.AssignDate;
+                cmd.Parameters.Add(param11);
+
+                SqlParameter param8 = new SqlParameter();
+                param8.ParameterName = "@closeby";
+                param8.Value = ticket.closeby;
+                cmd.Parameters.Add(param8);
+
+
+                SqlParameter param9 = new SqlParameter();
+                param9.ParameterName = "@id";
+                param9.Value = ticket.TicketID;
+                cmd.Parameters.Add(param9);
+
+                cmd.ExecuteNonQuery();
+
+
+
             }
             catch (Exception exception)
             {
-                System.Diagnostics.Trace.WriteLine("[TicketDao:addticketsTypedetail] Exception " + exception.StackTrace);
+                System.Diagnostics.Trace.WriteLine("[TicketDao:Updateticket] Exception " + exception.StackTrace);
+                returnString = IdProConstants.FAIL;
             }
             finally
             {
-                connectiondao.closeDabaseEntities(cmd, rs);
+                ConnectionDao.closeDabaseEntities(cmd, rs);
             }
-            return TICKETNOTEID;
+
+            return returnString;
         }
+
+ 
+      
         public DataSet gettickettype()
         {
             Employee objempstatus = new Employee();
@@ -150,20 +200,18 @@ namespace IDPRO.csharp.DAO
             return ds1;
         }
 
-        //here ticket assignment object instead of ticket that will also have ticket id in it. Like table ticket assignment
+      
+        
 
-
-
-
-        public Ticket getticketid(long accountid)  //where do you use this ticket id and why
+        public List<Ticket> getticketsByAccountid(long accountid) 
         {
             ConnectionDao connectionDao = new ConnectionDao();
-            Ticket ticket = new Ticket();
+            List<Ticket> tickets = new List<Ticket>();
             SqlCommand cmd = null;
             SqlConnection conn = null;
             SqlDataReader rs = null;
 
-            string query = "select * from Ticket where accountid=@accountid";   //this is very bad-- you don't access htt session in Data access layer
+            string query = "select ticketid from Ticket where accountid=@accountid";   
 
             try
             {
@@ -174,22 +222,20 @@ namespace IDPRO.csharp.DAO
                 param1.Value = accountid;
                 cmd.Parameters.Add(param1);
                 rs = cmd.ExecuteReader();
-                if (rs.Read())
-                {
-                    ticket.TicketID = Convert.ToInt32(rs["ticketid"]);
-                    strid = Convert.ToString(ticket.TicketID);
-                }
-                else
+                while (rs.Read())
                 {
 
-                    ticket = null;
-                }
+                    Ticket ticket = new Ticket();
+                  
+                    ticket=getticketbyticketid(Convert.ToInt32(rs["ticketid"]));
 
+                    tickets.Add(ticket);
+                 }
             }
             catch (Exception exception)
             {
                 System.Diagnostics.Trace.WriteLine("[TicketDao:getticketid] Exception " + exception.StackTrace);
-                ticket = null;
+                tickets = null;
 
             }
             finally
@@ -198,7 +244,7 @@ namespace IDPRO.csharp.DAO
                 connectionDao.closeDabaseEntities(cmd, rs);
             }
 
-            return ticket;
+            return tickets;
 
 
         }
@@ -275,7 +321,7 @@ namespace IDPRO.csharp.DAO
             }
 
 
-            //please don't user non parameterized query.SQL Injection issue
+          
 
 
 

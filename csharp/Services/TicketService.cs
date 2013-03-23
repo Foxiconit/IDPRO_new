@@ -94,9 +94,9 @@ namespace IDPRO.csharp.Services
         {
             Ticket ticket = new Ticket();
             ticket = new TicketDao().getticketbyticketid(ticketid);
-            ticket.ticketNotes = new List<TicketNote>();
+            //ticket.ticketNotes = new List<TicketNote>();  no need
             ticket.ticketNotes = new TicketNoteService().getticketnotebyid(ticketid);
-            ticket.ticketAssignment  = new List<TicketAssignment>();
+           // ticket.ticketAssignment  = new List<TicketAssignment>(); no need
             ticket.ticketAssignment = new TicketAssignmentService().getticketassignmentbyid(ticketid);
             return ticket;
 
