@@ -8,9 +8,10 @@
         <div class="span12">
             <div class="form-horizontal form-large">
                 <h3 class="title-divider">
-                    <span>Creditors</span></h3>
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
+                    <span>Creditors</span>
+                    <asp:Button ID="Button1" runat="server" Text="Add Creditor" CssClass="btn btn-success creditor check pull-right" /></h3>
+               <%-- <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>--%>
                         <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-bordered table-condensed"
                             GridLines="None" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand">
                             <AlternatingRowStyle BackColor="White" />
@@ -33,20 +34,23 @@
                             <SortedDescendingCellStyle BackColor="#E9EBEF" />
                             <SortedDescendingHeaderStyle BackColor="#4870BE" />
                         </asp:GridView>
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                    <%--</ContentTemplate>
+                </asp:UpdatePanel>--%>
             </div>
         </div>
     </div>
     <br />
     <div class="row-fluid">
         <div class="span12">
-            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                <ContentTemplate>
+          <%--  <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>--%>
                     <asp:Panel ID="pnlcreditordetails" runat="server" Visible="false">
                         <div class="form-horizontal form-large">
                             <h3 class="title-divider">
-                                <span>Creditor</span></h3>
+                                <span>Creditor</span>
+                                <asp:Button ID="Button2" runat="server" Text="Notes" CssClass="btn btn-success creditor check pull-right "
+                                    OnClick="Button2_Click" /></h3>
+                            </h3>
                             <div class="span12">
                                 <div class="span5">
                                     <div class="control-group">
@@ -202,8 +206,25 @@
                             </div>
                         </div>
                     </asp:Panel>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                <%--</ContentTemplate>
+            </asp:UpdatePanel>--%>
+        </div>
+    </div>
+    <div class="row-fluid" id="grdnote" runat="server" visible="false">
+        <div class="span12">
+            <div class="form-horizontal form-large">
+                <h3 class="title-divider">
+                    <span>Show Ticket Note History</span></h3>
+                <asp:GridView ID="gridnote" runat="server" CssClass="table table-striped table-bordered table-condensed"
+                    GridLines="None" AutoGenerateColumns="False">
+                    <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="ticketid" HeaderText="Ticket ID" />
+                        <asp:BoundField DataField="notedate" HeaderText="Note Date" />
+                        <asp:BoundField DataField="note" HeaderText="Description" />
+                    </Columns>
+                </asp:GridView>
+            </div>
         </div>
     </div>
     <br />

@@ -50,6 +50,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="web\Customer\Notes.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Ticket.xml">
       <SubType>Designer</SubType>
     </Content>
