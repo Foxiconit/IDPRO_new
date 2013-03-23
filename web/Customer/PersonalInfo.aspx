@@ -10,7 +10,7 @@
                             <div class="span12">
                                 <div class="form-horizontal form-large">
                                     <h3 class="title-divider">
-                                        <span>Client Information</span></h3>
+                                        <span>Customer Information</span></h3>
                                     <div class="span12">
                                         <div class="span5">
                                             <div class="control-group">
@@ -212,7 +212,7 @@
                                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                         <ContentTemplate>
                                             <h3 class="title-divider">
-                                                <span>Co- Client Information</span></h3>
+                                                <span>Co- Customer Information</span></h3>
                                             <div class="span12">
                                                 <div class="span5">
                                                     <div class="control-group">
