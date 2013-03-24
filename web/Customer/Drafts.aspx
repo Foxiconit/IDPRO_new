@@ -4,16 +4,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row-fluid">
+     <div class="row-fluid">
         <div class="span12">
             <div class="form-horizontal form-large">
-                <h3 class="title-divider">
-                    <span>Draft Details</span></h3>
+                <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="form-inline span12 draft-radio"
+                    RepeatDirection="Horizontal">
+                    <asp:ListItem Selected="True">All</asp:ListItem>
+                    <asp:ListItem>Drafts</asp:ListItem>
+                    <asp:ListItem>Fees</asp:ListItem>
+                    <asp:ListItem>Payments</asp:ListItem>
+                </asp:RadioButtonList>
                 <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-bordered table-condensed"
                     GridLines="None" AutoGenerateColumns="False">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="EffectiveDate" HeaderText="Effective Date" />
+                        <asp:BoundField DataField="EffectiveDate" HeaderText="Date" />
+                        <asp:BoundField DataField="Memo" HeaderText="Transaction Type" />
                         <asp:BoundField DataField="Amount" HeaderText="Amount" />
                         <asp:BoundField DataField="Status" HeaderText="Status" />
                         <asp:BoundField DataField="UpdatedBy" HeaderText="Updated By" />

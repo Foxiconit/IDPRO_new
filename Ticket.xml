@@ -6,7 +6,7 @@
           <xs:element name="course">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="TcketType" type="xs:string" minOccurs="0" />
+                <xs:element name="TicketType" type="xs:string" minOccurs="0" />
                 <xs:element name="Status" type="xs:string" minOccurs="0" />
                 <xs:element name="Priority" type="xs:string" minOccurs="0" />
                 <xs:element name="OpenedBy" type="xs:string" minOccurs="0" />
@@ -21,7 +21,7 @@
       </xs:complexType>
     </xs:element>
   </xs:schema>
-  <course>
+  <!--<course>
     <TcketType>Cancel_FSK</TcketType>
     <Status>Closed</Status>
     <Priority>Medium</Priority>
@@ -30,11 +30,11 @@
     <ClosedBy>JVALENCIA</ClosedBy>
     <ClosedDate>01/21/2013</ClosedDate>
     <AssignedTo></AssignedTo>
-  </course>
+  </course>-->
 
 
   <course>
-    <TcketType>ADD_LENDER</TcketType>
+    <TicketType>ADD_LENDER</TicketType>
     <Status>Open</Status>
     <Priority>High</Priority>
     <OpenedBy>RSANGUINO</OpenedBy>
