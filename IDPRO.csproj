@@ -281,10 +281,12 @@
     <Compile Include="csharp\DAO\AccountDAO.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\DAO\AccountNoteDao.cs" />
     <Compile Include="csharp\DAO\ConnectionDao.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="csharp\DAO\CreditDAO.cs" />
+    <Compile Include="csharp\DAO\CreditNotesDao.cs" />
     <Compile Include="csharp\DAO\CustomerDAO.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -308,7 +310,9 @@
     <Compile Include="csharp\Model\Account.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\Model\AccountNotes.cs" />
     <Compile Include="csharp\Model\Credit.cs" />
+    <Compile Include="csharp\Model\Credito_Notes.cs" />
     <Compile Include="csharp\Model\customer.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -326,9 +330,11 @@
     <Compile Include="csharp\Model\User.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\Services\AccountNoteService.cs" />
     <Compile Include="csharp\Services\AccountServices.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="csharp\Services\CreditNoteService.cs" />
     <Compile Include="csharp\Services\CreditServices.cs" />
     <Compile Include="csharp\Services\CustomerServices.cs">
       <SubType>Code</SubType>

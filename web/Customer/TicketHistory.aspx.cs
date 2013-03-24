@@ -26,25 +26,22 @@ namespace IDPRO.web.Customer
             if (!IsPostBack)
             {
 
-                Ticket ticket = new Ticket();
-                ticket.AccountID = 1006;
-
+                List<Ticket> ticket = new List<Ticket>();
+                
                 TicketDao ticketdao = new TicketDao();
-                ticket = ticketdao.getticketid(ticket.AccountID);
-                fillTicketGrid(ticket.TicketID);
+
+                ticket = ticketdao.getticketsByAccountid(1006);
+
+                fillTicketGrid(ticket);
 
 
             }
 
         }
 
-        public void fillTicketGrid(long ticketid)
+        public void fillTicketGrid(List<Ticket> ticket)
         {
-            Ticket ticketobj = new Ticket();
-            List<Ticket> listTickets = new List<Ticket>();
-            Ticket ticket = new TicketService().getticketbyticketid(ticketid);
-            listTickets.Add(ticket);
-            grdtickethistory.DataSource = listTickets;
+            grdtickethistory.DataSource = ticket;
             grdtickethistory.DataBind();
         }
 

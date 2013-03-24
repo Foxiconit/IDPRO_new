@@ -59,7 +59,7 @@ namespace IDPRO
             ticket.openby = Session["username"].ToString ();
             ticket.ticketAssignment = new List<TicketAssignment>();
             ticket.ticketNotes  = new List<TicketNote>();
-
+            
             ticketassignment.AssignDate = System.DateTime.Now;
             ticketassignment.AssignBy = HttpContext.Current.Session["username"].ToString();
             ticketassignment.AssignTo = DropAssignedTo.Text.Trim();
@@ -67,7 +67,7 @@ namespace IDPRO
 
             ticketnote.Note = txtdescription.Text.Trim();
             ticketnote.NoteDate = System.DateTime.Now;
-            
+            ticketnote.addedby = Session["username"].ToString();
             ticket.ticketNotes.Add(ticketnote);
             string msg;
             msg = ticketservice.TicketAdd(ticket);
