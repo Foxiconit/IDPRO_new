@@ -14,6 +14,7 @@ namespace IDPRO.web.Customer
         protected void Page_Load(object sender, EventArgs e)
         {
             BindGrid();
+            //BindGridNotes();
 
         }
 
@@ -29,17 +30,17 @@ namespace IDPRO.web.Customer
 
         }
 
-        public void BindGridNotes()
-        {
-            DataSet ds = new DataSet();
-            //ds.ReadXml(@"D:\Hosting\9847121\html\demo\course.xml");
-            //  ds.ReadXml(@"C:\Users\dev\Documents\Visual Studio 2010\WebSites\Driving2\course.xml");
-            string rootPath = System.Web.HttpContext.Current.Server.MapPath("~/");
-            ds.ReadXml(rootPath + "web/customer/Notes.xml");
-            gridnote.DataSource = ds;
-            gridnote.DataBind();
+        //public void BindGridNotes()
+        //{
+        //    DataSet ds = new DataSet();
+        //    //ds.ReadXml(@"D:\Hosting\9847121\html\demo\course.xml");
+        //    //  ds.ReadXml(@"C:\Users\dev\Documents\Visual Studio 2010\WebSites\Driving2\course.xml");
+        //    string rootPath = System.Web.HttpContext.Current.Server.MapPath("~/");
+        //    ds.ReadXml(rootPath + "web/customer/Notes.xml");
+        //    gridnote.DataSource = ds;
+        //    gridnote.DataBind();
 
-        }
+        //}
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -47,12 +48,12 @@ namespace IDPRO.web.Customer
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            grdnote.Visible = true;
-            BindGridNotes();
-            gridnote.Focus();
+        //protected void Button2_Click(object sender, EventArgs e)
+        //{
+        //    grdnote.Visible = true;
+        //    BindGridNotes();
+        //    gridnote.Focus();
 
-        }
+        //}
     }
 }

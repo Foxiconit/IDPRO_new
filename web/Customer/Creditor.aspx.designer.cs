@@ -40,15 +40,6 @@ namespace IDPRO.web.Customer {
         protected global::System.Web.UI.WebControls.Panel pnlcreditordetails;
         
         /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-        
-        /// <summary>
         /// txtCreditor control.
         /// </summary>
         /// <remarks>
@@ -166,21 +157,21 @@ namespace IDPRO.web.Customer {
         protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
-        /// grdnote control.
+        /// lblsuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl grdnote;
+        protected global::System.Web.UI.WebControls.Label lblsuc;
         
         /// <summary>
-        /// gridnote control.
+        /// btncallme control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridnote;
+        protected global::System.Web.UI.WebControls.Button btncallme;
     }
 }

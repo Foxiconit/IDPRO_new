@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row-fluid">
         <div class="span12">
+       
             <div class="box">
                 <div class="box-header">
                     <span class="title">Customer</span>

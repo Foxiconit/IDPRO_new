@@ -120,6 +120,13 @@
     <Content Include="web\CSR\AccountInformationChange.aspx" />
     <Content Include="AddEmployee.aspx" />
     <Content Include="web\Customer\demo.aspx" />
+    <Content Include="web\Orientation\5Keys.aspx" />
+    <Content Include="web\Orientation\default.css" />
+    <Content Include="web\Orientation\Greeting.aspx" />
+    <Content Include="web\Orientation\REBUTTALS.aspx" />
+    <Content Include="web\Orientation\Services.aspx" />
+    <Content Include="web\Orientation\Validation.aspx" />
+    <Content Include="web\Orientation\WebForm2.aspx" />
     <Content Include="web\Sales\BankInfo.aspx" />
     <Content Include="web\CSR\BankingInformationChange.aspx" />
     <Content Include="web\CSR\BankingInformationChange2.aspx" />
@@ -746,6 +753,55 @@
     <Compile Include="web\Customer\demo.aspx.designer.cs">
       <DependentUpon>demo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="web\Orientation\5Keys.aspx.cs">
+      <DependentUpon>5Keys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Orientation\5Keys.aspx.designer.cs">
+      <DependentUpon>5Keys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Orientation\Greeting.aspx.cs">
+      <DependentUpon>Greeting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Orientation\Greeting.aspx.designer.cs">
+      <DependentUpon>Greeting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Orientation\Orientation.Master.cs">
+      <DependentUpon>Orientation.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Orientation\Orientation.Master.designer.cs">
+      <DependentUpon>Orientation.Master</DependentUpon>
+    </Compile>
+    <Compile Include="web\Orientation\REBUTTALS.aspx.cs">
+      <DependentUpon>REBUTTALS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Orientation\REBUTTALS.aspx.designer.cs">
+      <DependentUpon>REBUTTALS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Orientation\Services.aspx.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Orientation\Services.aspx.designer.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Orientation\Validation.aspx.cs">
+      <DependentUpon>Validation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Orientation\Validation.aspx.designer.cs">
+      <DependentUpon>Validation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Orientation\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Orientation\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="web\Sales\BankInfo.aspx.cs">
       <DependentUpon>BankInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1370,6 +1426,7 @@
     <None Include="obj\Debug\IDPRO.csprojResolveAssemblyReference.cache" />
     <Content Include="web\CSR\CustomerService.Master" />
     <Content Include="web\Customer\Customer.Master" />
+    <Content Include="web\Orientation\Orientation.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

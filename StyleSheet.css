@@ -662,6 +662,23 @@ font-weight:bold;
 height: 23px;
 padding: 1px 17px;
 margin-top: -3px;
+font-weight: normal;
+}
+.comments 
+{
+    font-size:12px;
+ 
+}
+.black
+{
+    color:#333;
+}
+
+.media.hr
+{
+    padding: 9px 15px;
+border-bottom: 1px solid #eee;
+    
 }
 
 .form-horizontal .control-group > .csf-label {
