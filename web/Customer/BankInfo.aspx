@@ -19,8 +19,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="span1" style="margin-left: 0;">
-                        <asp:Button ID="btnCheck" runat="server" CssClass="btn check" Text="Check" />
+                    <div class="span1 pull-left">   
+                    <a class="btn btn-small" href="#"> Check</a>
+                       
                     </div>
                     <div class="span5">
                         <div class="control-group">

@@ -22,15 +22,6 @@ namespace IDPRO.web.Customer {
         protected global::System.Web.UI.WebControls.TextBox txtbankRouting;
         
         /// <summary>
-        /// btnCheck control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheck;
-        
-        /// <summary>
         /// txtBankName control.
         /// </summary>
         /// <remarks>
